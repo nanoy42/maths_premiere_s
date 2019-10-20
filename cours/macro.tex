@@ -1,0 +1,122 @@
+\documentclass{report}[11pt]
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{times}
+\usepackage{float}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\frenchbsetup{StandardLists=true} % à inclure si on utilise \usepackage[french]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+%\usepackage[Algorithme]{algorithm}
+%\usepackage{algorithmic}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usetikzlibrary{shapes}
+\pagestyle{fancy}
+\newcommand{\tr}[1]{{\vphantom{#1}}^{\mathit t}{#1}} 
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{Cours 1ère S}
+\fancyhead[R]{Yoann Pietri}
+\newcounter{theoremecounter}[subsection]
+\usepackage{titlesec}
+\usepackage{picins}
+\setcounter{secnumdepth}{3}% enlève la numérotation après les sections
+%\renewcommand\thechapter {\Roman{chapter}}
+
+ \setlength{\parindent}{0pt}
+
+\newenvironment{prog}[0]{$\blacktriangleright$}{$\blacktriangleleft$}
+\newenvironment{preuve}[0]{\underline{\textbf{Preuve :}} \newline}{\begin{flushright}{$\square$}\end{flushright}}
+\newenvironment{remarque}[0]{\underline{\textbf{Remarque :}} \newline}{\begin{flushright}{$\boxtimes$}\end{flushright}}
+\newenvironment{remarques}[0]{\underline{\textbf{Remarques :}} \newline}{\begin{flushright}{$\boxtimes$}\end{flushright}}
+\newenvironment{exemple}[0]{\underline{\textbf{Exemple :}} \newline}{\begin{flushright}{$\blacksquare$}\end{flushright}}
+\newenvironment{exemples}[0]{\underline{\textbf{Exemples :}} \newline}{\begin{flushright}{$\blacksquare$}\end{flushright}}
+\newcommand{\theo}[2]{\addtocounter{theoremecounter}{1}\begin{tikzpicture}
+\node [theobox] (box){%
+    \begin{minipage}{0.95\textwidth}
+        #2
+        \end{minipage}
+};
+\node[theotitle, right=10pt] at (box.north west) {Théorème \arabic{section}.\arabic{subsection}.\arabic{theoremecounter}#1};
+\end{tikzpicture}
+}
+
+\newcommand{\prop}[2]{\addtocounter{theoremecounter}{1}\begin{tikzpicture}
+\node [theobox] (box){%
+    \begin{minipage}{0.95\textwidth}
+        #2
+        \end{minipage}
+};
+\node[theotitle, right=10pt] at (box.north west) {Proposition \arabic{section}.\arabic{subsection}.\arabic{theoremecounter}#1};
+\end{tikzpicture}
+}
+\newcommand{\propriete}[2]{\addtocounter{theoremecounter}{1}\begin{tikzpicture}
+\node [theobox] (box){%
+    \begin{minipage}{0.95\textwidth}
+        #2
+        \end{minipage}
+};
+\node[theotitle, right=10pt] at (box.north west) {Propriété \arabic{section}.\arabic{subsection}.\arabic{theoremecounter}#1};
+\end{tikzpicture}
+}
+
+\newcommand{\lem}[2]{\addtocounter{theoremecounter}{1}\begin{tikzpicture}
+\node [theobox] (box){%
+    \begin{minipage}{0.95\textwidth}
+        #2
+        \end{minipage}
+};
+\node[theotitle, right=10pt] at (box.north west) {Lemme \arabic{section}.\arabic{subsection}.\arabic{theoremecounter}#1};
+\end{tikzpicture}
+}
+
+\newcommand{\coro}[2]{\addtocounter{theoremecounter}{1}\begin{tikzpicture}
+\node [theobox] (box){%
+    \begin{minipage}{0.95\textwidth}
+        #2
+        \end{minipage}
+};
+\node[theotitle, right=10pt] at (box.north west) {Corollaire \arabic{section}.\arabic{subsection}.\arabic{theoremecounter}#1};
+\end{tikzpicture}
+}
+
+\newcommand{\defi}[2]{\addtocounter{theoremecounter}{1}\begin{tikzpicture}
+\node [theobox] (box){%
+    \begin{minipage}{0.95\textwidth}
+        #2
+        \end{minipage}
+};
+\node[theotitle, right=10pt] at (box.north west) {Définition \arabic{section}.\arabic{subsection}.\arabic{theoremecounter}#1};
+\end{tikzpicture}
+}
+
+\newcommand{\methode}[2]{\begin{tikzpicture}
+\node [theobox] (box){%
+    \begin{minipage}{0.95\textwidth}
+        #2
+        \end{minipage}
+};
+\node[theotitle, right=10pt] at (box.north west) {Méthode #1};
+\end{tikzpicture}
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\eqi}{\Leftrightarrow}
+\titleformat{\subsubsection}
+   {\normalfont\fontsize{11pt}{13pt}\selectfont\bfseries}% apparence commune au titre et au numéro
+   {\thesubsubsection}% apparence du numéro
+   {1em}% espacement numéro/texte
+   {}% apparence du titre
+
+\tikzstyle{theobox} = [draw=black, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{theotitle} =[fill=white, text=black,rounded corners,draw=black,very thick]
