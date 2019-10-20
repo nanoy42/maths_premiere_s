@@ -1,0 +1,104 @@
+\include{macro_sujet}
+
+\usepackage{empheq}
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\fancyhead[L]{Sujet : Inégalité de Markov et de Bienaymé-Tchebychev}
+
+
+\begin{document}
+\center{Sujet : Inégalité de Markov et de Bienaymé-Tchebychev}
+\flushleft
+Si au cours du sujet, le candidat repère ce qui lui semble être une erreur énoncé, il l'indique sur sa copie et continue sa composition. \newline
+
+Il est demandé au candidat une clarté dans les raisonnements qu'il mettra en place. \newline
+
+L'usage de la calculatrice est interdit.\newline
+
+$$\star$$
+\underline{Notations :}\newline
+Dans tous le problème $\Omega$ désigne un univers et $P$ une probabilité sur $\Omega$ (sauf dans la partie IV où $\Omega$ et $P$ sont particularisés). Si $X$ est une variable aléatoire sur $(\Omega,P)$, on note $E(X)$ l''espérance de $X$ et $V(X)$ la variance de $X$.\newline
+
+$[\![1,n]\!]$ désigne l'ensemble des nombres entiers compris entre $1$ et $n$ ($1$ et $n$ compris)
+
+$$\star$$
+L'objectif de ce problème est de prouver les inégalités suivantes : \newline
+
+Pour $X$ une variable aléatoire sur $(\Omega,P)$ avec $X \geq 0$, on a pour tout $a>0$ : 
+$$P(X \geq a) \leq \frac{E(X)}{a}$$
+$$P(|X-E(X)| \geq a) \leq \frac{V(X)}{a^2}$$
+Le sujet est composé de 4 parties qui peuvent être traitées indépendamment \textbf{en admettant les résultats encadrés}\newline
+
+\section*{I - Quelques résultats sur les sommes}
+Soient $a_1,a_2,\ldots,a_n$ des réels. On note 
+$$a_1 + a_2 + \ldots + a_n = \sum_{k=1}^n a_k = \sum_{k \in [\![1,n]\!]} a_k$$
+Si $A$ est un ensemble, on peut aussi écrire 
+$$\sum_{x\in A} x$$ qui est la somme de tous les éléments de l'ensemble $A$
+\begin{enumerate}
+\item Soit $a_1,a_2,\ldots,a_n,b_1,b_2,\ldots,b_n$ des réels. Montrer que 
+$$\sum_{k=1}^n a_k + b_k = \sum_{k=1}^n a_k + \sum_{k=1}^n b_k$$
+\item Soit $a_1,a_2,\ldots,a_n$ et $\lambda \in \R$. Montrer que 
+$$\sum_{k=1}^n \lambda a_k = \lambda \sum_{k=1}^n a_k $$
+
+On rappelle ici que si $a \leq b$ et $c \leq d$ alors $a+c \leq b+d$. \newline
+
+On en déduit que si pour tout $k \in [\![1,n]\!]$, $a_k \leq b_k$ alors $$\sum_{k=1}^n a_k \leq \sum_{k=1}^n b_k$$
+\item En déduire que 
+$$\boxed{(\forall k \in [\![1,n]\!], a_k \geq 0 )\Rightarrow \sum_{k=1}^n a_k \geq 0}$$
+(si tous les $a_k$ sont positifs alors la somme est positive)
+\item Montrer que si pour tout $k \in [\![1,n]\!]$, $a_k \geq 0$ et $\sum_{k=1}^n a_k = 0$, alors pour tout $k\in [\![1,n]\!], a_k = 0$
+\item On peut ajouter des conditions à des sommes : par exemple 
+$$\sum_{\substack{ k \in [\![1,n]\!] \\ a_k \geq 3}} a_k$$ est la somme de tous les $a_k$ plus grand que 3\newline 
+
+Calculer par exemple $$\sum_{\substack{ k \in [\![1,8]\!] \\ a_k \geq 3}} a_k$$ où les $a_k$ sont définis par \newline
+
+\begin{tabularx}{\linewidth}{|X|X|X|X|X|X|X|X|}
+\hline
+$a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$ & $a_6$ & $a_7$ & $a_8$ \\ \hline
+-1 & 2 & 4 & 6 & 7 & 2,5& 4 & 2\\
+\hline
+\end{tabularx}
+\end{enumerate}
+\section*{II - Inégalité de Markov}
+\begin{enumerate}
+\item Soit $X$ une variable aléatoire sur $(\Omega,P)$. On note $X(\Omega) = \{x_1,x_2,\ldots,x_n\}$. Ecrire $E(X)$ sous la forme d'une somme (on utilisera $\sum_{k=1}^n$ plutôt que $\sum_{x\in X(\Omega)}$)
+\item On dit que $X \geq 0$ si pour tout $x\in X(\Omega)$, $x\geq 0$.\newline
+
+Montrer que 
+$$\boxed{X \geq 0 \Rightarrow E(X) \geq 0}$$
+A l'aide d'un contre exemple, montrer que l'on peut avoir $E(X) \geq 0$ sans avoir $X \geq 0$
+\item Soit $X \geq 0$ et $a > 0$. Montrer que 
+$$\boxed{\frac{E(X)}{a} = \sum_{\substack{k \in [ \![1,n]\!]\\x_k \geq a}} \frac{x_k}{a} P(X = x_k)+ \sum_{\substack{k \in [ \![1,n]\!]\\x_k \leq a}} \frac{x_k}{a} P(X = x_k)}$$
+(\emph{On ira étape par étape en explicitant bien les opérations effectuées})
+\item Le terme $$\sum_{\substack{k \in [ \![1,n]\!]\\x_k \leq a}} \frac{x_k}{a} P(X = x_k)$$ est-il positif ? négatif ? nul ? En déduire que $$\boxed{\frac{E(X)}{a} \geq \sum_{\substack{k \in [ \![1,n]\!]\\x_k \geq a}} \frac{x_k}{a} P(X = x_k)}$$
+\item Prouver que 
+$$\sum_{\substack{k \in [ \![1,n]\!]\\x_k \geq a}} \frac{x_k}{a} P(X = x_k) \geq \sum_{\substack{k \in [ \![1,n]\!]\\x_k \geq a}} P(X = x_k)$$
+(\emph{On attend ici UN argument mais un vrai, pas des justifications fumeuses})
+On déduit ainsi 
+$$\boxed{\frac{E(X)}{a} \geq  \sum_{\substack{k \in [ \![1,n]\!]\\x_k \geq a}} P(X = x_k)}$$
+\item Ecrire $P(X \geq a)$ sous la forme d'une somme dont les termes sont de la forme $P(X = x_k)$ 
+\item En déduire l'inégalité de Markov $$\boxed{P(X \geq a)\leq \frac{E(X)}{a}}$$
+\end{enumerate}
+\section*{III - Inégalité de Bienaymé-Tchebychev}
+Soit $Y$ une variable aléatoire et soit $b \in \R$. On dit que $Y \geq b$ si pour tout $y \in Y(\Omega)$, on a $y \geq b$
+\begin{enumerate}
+\item Soit $b> 0$. Montrer que 
+$$\boxed{Y^2 \geq b^2 \Leftrightarrow |Y| \geq b}$$
+En déduire que $$P(Y^2 \geq b^2) = P(|Y| \geq b)$$
+\item Rappeler la définition de $V(X)$
+\item Montrer que $$V(X) = E(X^2)-E(X)$$
+\item Soit $a > 0$. Appliquer l'inégalité de Markov à $(X-E(X))^2$ et $a^2$
+\item Déduire de la question précédente et de la question III.1 l'inégalité de Bienaymé-Tchebychev $$\boxed{P(|X - E(X)| \geq a) \leq \frac{V(X)}{a^2}}$$
+\end{enumerate}
+\section*{IV - 2 applications}
+\begin{enumerate}
+\item On considère le jeu suivant : \emph{On lance deux dés équilibrés et on gagne, en euros, la somme des deux dés} (par exemple, si on tire un 3 et un 6, on gagne 9 euros). On note $X$ la variable aléatoire qui donne le gain en euros 
+\begin{enumerate}
+\item Donner $\Omega$, $X(\Omega)$, la loi de $X$, $E(X)$ et $V(X)$. Vérifier aussi que $X \geq 0$
+\item Ecrire l'inégalité de Markov pour l'évènement, le gain est plus grand que 8 euros ($P(X \geq 8)$)
+\item Calculer $P(X \geq 8)$ et conclure
+\end{enumerate}
+\item Pourquoi peut-on dire que la variance caractérise l'écart entre les valeurs d'une variable aléatoire $Y$ (c'est à dire l'écart à l'espérance). On pourra utiliser l'inégalité de Bienaymé-Tchebychev
+\end{enumerate}
+\end{document}

@@ -1,0 +1,124 @@
+\include{macro_sujet}
+
+\usepackage{empheq}
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\fancyhead[L]{Sujet : Fonction exponentielle}
+
+
+\begin{document}
+\center{Sujet : Etude d'une fonction particulière : la fonction exponentielle}
+\flushleft
+Si au cours du sujet, le candidat repère ce qui lui semble être une erreur énoncé, il l'indique sur sa copie et continue sa composition. \newline
+
+Il est demandé au candidat une clarté dans les raisonnements qu'il mettra en place. \newline
+
+L'usage de la calculatrice est autorisé.\newline
+
+$$\star$$
+\underline{Notations :}\newline
+Pour une fonction $f$ quelconque, on note $\mathscr{D}_f$ son ensemble de définition. On note $Im(f) = \{f(x)/x\in \mathscr{D}_f\}$ l'ensemble des images de $f$ (le "/" veut dire "tel que" : c'est l'ensemble des $f(x)$ tel que $x$ soit dans l'ensemble de définition de $f$).\newline
+
+Pour une fonction $f$ on note $f'$ sa dérivée
+$$\star$$
+\section*{I - Dérivée d'une composée}
+\begin{enumerate}
+\item R.O.C : Soit $u$ une fonction et $a\in \mathscr{D}_u$, donner la définition de la dérivabilité de $u$ et en $a$ et le cas échéant la formule donnant $u'(a)$
+\item On considère deux fonctions $f$ et $g$ telles que $Im(f) \subset \mathscr{D}_f$. On note $h = f(g)$\newline
+
+On va établir le résultat suivant : si $g$ est dérivable sur $I$ et si $f$ est dérivable sur $g(I) = \{g(x) / x\in I\}$, alors $h$ et dérivable sur $I$ et pour tout $x\in I$, $$h'(x) = g'(x)f'(g(x))$$
+Soit $a \in I$. On admet que $$\underset{p\rightarrow 0}{\lim}\frac{u(a+p) - u(a)}{p} = \underset{x\rightarrow a}{\lim}\frac{u(x) - u(a)}{x-a}$$Pour simplifier la démonstration (même si ce théorème reste vrai dans le cas général), on suppose $f$ non constante.\newline 
+
+En faisant apparaitre $\frac{1}{g(x) - g(a)} \times (g(x) - g(a))$ dans $$\frac{f(g(x)) - f(g(a))}{x- a}$$ montrer que $$ \underset{x\rightarrow a}{\lim}\frac{f(g(x)) - f(g(a))}{x -a} = g'(a)f'(g(a))$$ En déduire le résultat\newline
+
+On retiendra, pour la suite, le résultat : si $f$ et $g$ sont dérivables sur $\R$ et $h:x\mapsto f(g(x))$, alors, pour tout $x$
+$$\boxed{h'(x) = g'(x)\times f'(g(x))}$$
+\item Calculer la dérivée de $x\mapsto \sqrt{1+x^2}$ sur $]-1,+\infty[$
+\item Soit $f$ une fonction dérivable sur $\R$. Montrer que $$\boxed{(f(-x))' = -f'(-x)}$$(Plus formellement, la dérivée de $x\mapsto f(-x)$ est $x\mapsto -f'(-x)$)
+\end{enumerate}
+\section*{II - Etude d'une équation}
+On s'intéresse à l'équation $$y' = y$$ où $y$ est une fonction définie et dérivable sur $\R$ (l'équation s'écrit aussi $f' = f$)
+On s'intéresse plus particulièrement au système 
+$$(S) : \left\{ \begin{array}{l}y'=y \\ y(0)=1 \end{array}\right.$$
+(On cherche une fonction dérivable sur $\R$ qui vaut $1$ en $0$ et dont la dérivée est elle même)\newline
+
+
+On va montrer que si une solution de (S) existe, alors celle-ci est unique\newline
+
+Soit $f_0$ dérivable sur $\R$. On suppose $f$ solution de $(S)$. Ainsi $f' = f$ et $f(0) = 1$\newline
+
+On montre tout d'abord que $f_0$ ne s'annule pas sur $\R$. Pour cela, on pose $g$ la fonction $g : x\mapsto f(x)f(-x)$
+\begin{enumerate}
+\item Montrer que $g$ est constante sur $\R$ (\emph{On pourra utiliser une dérivée et la question I.4)}
+\item Donner la valeur de $g$ sur $\R$
+\item Conclure que $f$ ne peut s'annuler\newline
+
+On suppose maintenant que $f$ et $h$ sont deux solutions de $(S)$. On considère la fonction $\psi$ sur $\R$ définie par $$\psi(x) = \frac{f(x)}{h(x)}$$
+(cette fonction est bien définie car $h$ ne s'annule pas)
+\item Montrer que $\psi$ est constante sur $\R$ (\emph{On pourra utiliser une dérivée})
+\item Donner la valeur de $\psi$ sur $\R$
+\item En déduire que pour tout $x$, $f(x) = h(x)$\newline
+
+\textbf{On admet que le système $(S)$ admet une solution que l'on note $x\mapsto \exp(x)$, appelée fonction exponentielle. Cette fonction est l'unique solution du système $(S)$}\newline
+
+
+On a $$\forall x \in \R \exp'(x) = \exp(x)$$
+$$\exp(0) =1$$
+
+Soit $\alpha \in \R^*$. On considère le système
+$$(S_\alpha) : \left\{ \begin{array}{l}y'=y \\ y(0)=\alpha \end{array}\right.$$
+\item Monter que si $f$ est solution de $(S_\alpha)$ alors $\frac{1}{\alpha}f$ est solution de $(S)$
+\item Montrer que $x\mapsto \alpha\times \exp(x)$ est solution de $(S_\alpha)$. Déduire de la question précédente que c'est la seule solution
+\end{enumerate}
+\section*{III - Une autre équation}
+\begin{enumerate}
+\item Soit $\beta \in \R$. Montrer que la dérivée de $x\mapsto \exp(\beta x)$ est $x\mapsto \beta \exp(\beta x)$ (\emph{On utilisera la formule de dérivée d'une composée})
+\item Soit $a \in \R$. Déduire de la question précédente que $x\mapsto \exp(ax)$ est solution de l'équation $$(E) \quad y' = a y$$
+\item Soit $f$ et $g$ deux solutions de $(E)$. On suppose que $g$ ne s'annule pas et on considère $$h = \frac{f}{g}$$ Montrer que $h$ est constante (\emph{On pourra considérer une dérivée})
+\item Déduire que les solutions de $(E)$ sont de la forme $$x \mapsto A \exp(ax)$$ où est $A$ est une constante réelle
+\end{enumerate}
+\section*{IV - Logarithme népérien}
+\textbf{On admet l'existence d'une fonction, appelée logarithme népérien, notée $x\mapsto \ln(x)$ telle que pour tout $x\in \R$, $$\boxed{\ln(\exp(x)) = \exp(\ln(x)) = x}$$}
+\begin{enumerate}
+\item Montrer que $x \mapsto \ln(\exp(x))$ est dérivable sur $\R$ et donner sa dérivée (en fonction de $\exp$ et $\ln'$. En déduire que 
+$$\exp(x) \ln'(\exp(x)) = 1$$
+\item En posant $y = \exp(x)$, montrer que $\ln'(y) = \frac{1}{\exp(y)}$\newline
+
+Ainsi la dérivée de $\ln$ est la fonction inverse
+\end{enumerate}
+\section*{V - Propriétés de l'exponentielle}
+\begin{enumerate}
+\item On rappelle que $\exp$ ne s'annule pas sur $\R$. Montrer alors que $\exp$ est croissante
+\item Soit $a\in\R$. On s'intéresse à la fonction $$\gamma : x\mapsto \exp(a+x)$$Montrer que $\gamma$ est dérivable et calculer sa dérivée
+\item Calculer $\gamma(0)$
+\item En déduire que $\gamma$ est solution de $(E_{\exp(a)})$
+\item Déduire finalement, que pour tout $x$ réel
+$$\exp(a+x) = \exp(a)\exp(x)$$
+Ainsi pour tout $a,b$ réels $$\boxed{\exp(a+b) = \exp(a)\exp(b)}$$
+\item Montrer que $$\exp(a)\exp(-a) =1$$ En déduire que $$\boxed{\exp(-a) = \frac{1}{\exp(a)}}$$ et $$\boxed{\exp(a) = \frac{1}{\exp(-a)}}$$
+\item Soit $n\in \N^*$. Montrer que $$\boxed{\exp(nx) = \exp(x)^n}$$ On admet que pour tout $x$ et $y$ réels, $$\exp(xy) = \exp(x)^y$$
+\item Montrer les propriétés suivants sur le logarithme népérien : pour tout $a$ et $b$ réels 
+$$\ln(ab) = \ln(a) + \ln(b)$$
+$$\ln(a^b) = b\ln(a)$$ 
+\item Montrer que pour tout $x$ et $y$ réels, $$x^y = \exp(y \ln(x))$$
+\end{enumerate}
+\section*{VI - Mise sous forme de puissance}
+\begin{enumerate}
+\item R.O.C. Que valent $(ab)^c$ ? $a^{b+c}$ ? $(a^b)^c$ ? Trouver des analogies avec l'exponentielle
+\item On pose $e = \exp(1)$. Montrer que $\ln(e) = 1$
+\item Montrer que pour tout $x\in \R$, $$\boxed{e^x = \exp(x)}$$ (\emph{On pourra utiliser la question V.9})
+\end{enumerate}
+\section*{VII - Approximation de $e$ et représentation graphique}
+\begin{enumerate}
+\item On considère la suite $u_n$ définie par $$u_n = \left(1+ \frac{1}{n}\right)^n$$
+Exprimer $u_n$ sous la forme $e^{\ldots}$ (\emph{utiliser la question V.9})
+\item On admet que $$\ln\left(1+\frac{1}{n}\right) \underset{n \rightarrow \infty}{\longrightarrow} 1$$. Montrer alors que $$u_n\underset{n \rightarrow \infty}{\longrightarrow} e$$
+\item Calculer $u_{1000}$ à l'aide de la calculatrice. Comparer à la valeur de $\exp(1)$ donner à la calculatrice. Tracer sur la copie les graphes de $x\mapsto\exp(x)$ et $x\mapsto (u_{1000})^x$. La suite $u_n$ converge-t-elle rapidement ou lentement vers $e$
+\end{enumerate}
+\center
+FIN DU SUJET
+\flushleft
+$$\star \star \star$$
+\emph{La fonction exponentielle est surement l'une des fonctions les plus importantes des mathématiques puisqu'on la retrouve un peu partout, tout comme $e$ qui est irrationnel}
+\end{document}

@@ -1,0 +1,128 @@
+\include{macro_sujet}
+
+\fancyhead[L]{Sujet : Les complexes}
+
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\begin{document}
+\center{Sujets : les complexes}
+\flushleft
+Si au cours du sujet, le candidat repère ce qui lui semble être une erreur énoncé, il l'indique sur sa copie et continue sa composition. \newline
+
+Il est demandé au candidat une clarté dans les raisonnements qu'il mettra en place. \newline
+
+L'usage de la calculatrice est interdit.\newline
+\section{Préliminaires}
+\begin{enumerate}
+\item Par définition, on a $$e \otimes e' = e'\otimes e = e'$$ or de même, par définition $$e'\otimes e = e$$ donc $$\boxed{e = e'}$$
+\item On a $$x\otimes y =e$$ et $$x\otimes z = e$$ donc $$x\otimes y = x\otimes z$$ donc $$y\otimes(x\otimes y) = y\otimes(x\otimes z)$$ donc $$e\otimes y = e\otimes z$$ donc $$\boxed{y = z}$$
+\end{enumerate}
+\section{Propriétés de $\R^2$}
+\begin{enumerate}
+\item On a $$(x,y) + (0,0) = (x+0,y+0) = (x,y)$$
+Pour tout $(x,y)\in\R^2$, $(x,y) + (0,0) = (x,y)$ donc $(0,0)$ est un neutre pour $+$
+\item $$(x,y) \times (1,0) = (x\times 1 - y\times 0,x\times 0 + y\times 1) = (x,y)$$
+Pour tout $(x,y)\in\R^2$, $(x,y) \times (1,0) = (x,y)$ donc $(1,0)$ est un neutre pour $\times$
+\item On a $$(x,y) + (-x,-y) = (x-x,y-y) = (0,0)$$
+\item On a $$(x,y) \times (0,0) = (x\times 0 - y \times 0,y\times 0 + x \times 0) = (0,0)$$
+Vu que pour tout $(x,y)\in\R^2$, on a $(x,y)\times(0,0) = (0,0)$ on ne peut pas trouver $(a,b)$ tel que $(0,0)\times (a,b) = (1,0)$ donc $(0,0)$ n'est pas inversible pour $\times$
+\item Soit $(x,y)\in \R^2$, $(x,y) \neq (0,0)$. On essaie de résoudre l'équation en z,t
+$$(x,y) \times (z,t) = (1,0)$$
+$$(xz-ty,xt+yz) = (1,0)$$
+$$\left\{ \begin{array}{l}xz-ty = 1\\ xt+yz = 0 \end{array} \right.$$
+$$\left\{ \begin{array}{l}x^2z+y^2z = x\\ t = - \frac{yz}{x} \end{array} \right.$$
+$$\left\{ \begin{array}{l}z = \frac{x}{x^2+y^2}\\ t = - \frac{yz}{x} \end{array} \right.$$
+$$\left\{ \begin{array}{l}z = \frac{x}{x^2+y^2}\\ t = - \frac{y}{x^2+y^2} \end{array} \right.$$
+Donc $(x,y)$ est inversible d'inverse $$\boxed{(\frac{x}{x^2+y^2},- \frac{y}{x^2+y^2})}$$
+\item $$(0,1)^2 = (0\times 0 - 1\times 1, 0\times 1 + 1\times 0) =(-1,0)$$
+$$\boxed{i^2 = -1}$$
+\item Soit $\vec{u}$ et $\vec{v}$ deux vecteurs non colinéaires. Alors pour tout vecteur $\vec{w}$, il existe $\lambda$ et $\mu$ tels que 
+$$\vec{w} = \lambda \vec{u} + \mu \vec{v}$$
+\item $$1\times 1 - 0\times 0 = 1 \neq 0$$ donc les vecteurs ne sont pas colinéaires
+\item $$(x,y) = (x,0) + (0,y) = x(1,0) + y(0,1) = x +iy$$
+\item $Re(3+2i) = 3$; $Im(3+2i) = 2$; $$(3+2i)^2 = (3+2i)\times(3+2i) = 9 +12i -4$$
+\item $$(x+iy)^2 = (x+iy)\times(x+iy) = x\times(x+iy) + iy\times(x+iy) = x^2 + 2ixy +i^2y^2 = x^2 + 2ixy - y^2$$
+On obtient bien l'équation demandée
+\end{enumerate}
+\section{Conjugué}
+Soit $z = a+ib \in \C$. On appelle conjugué de $z$ et on note $\overline{z}$ le nombre complexe $$\overline{z} = a - ib$$
+\begin{enumerate}
+\item $\overline{3 + i} = 3 - i$
+\item Soit $z\in\C$ \begin{enumerate} \item On a $z = Re(z) = Re(z) +0\times i$ donc $\overline{z} = Re(z) - 0 \times i = Re(z) = z$ \item On a $\overline{z}=z$ donc $Re(z) + iIm(z) = Re(z) - iIm(z)$ donc $Im(z) = -Im(z)$ donc $Im(z) = 0$ \end{enumerate}
+\item $\overline{\overline{z}} = \overline{\overline{Re(z) + iIm(z)}} = \overline{Re(z) - iIm(z)} = Re(z) + iIm(z)=z$
+\item 
+$$
+\begin{array}{l l}
+z \times \overline{z} &= (Re(z) + iIm(z))(Re(z) - iIm(z))\\
+& = Re(z)^2 +iRe(z)Im(z) - iRe(z)Im(z) -i^2Im(z)\\
+& = Re(z)^2 + Im(z)^2
+\end{array}
+$$
+\item $$
+\begin{array}{l l}
+\overline{z + z'} &= \overline{Re(z)+iIm(z) + Re(z') + iIm(z')} \\
+&= \overline{Re(z) + Re(z') + i(Im(z)+Im(z'))} \\
+&= Re(z) + Re(z') - i(Im(z)+Im(z'))\\
+&= Re(z) - iIm(z) + Re(z') - iIm(z')\\
+&= \overline{z} + \overline{z'}
+\end{array}
+$$
+\item $$
+\begin{array}{l l}
+\overline{z \times z'} &= \overline{(Re(z)+iIm(z)) \times (Re(z') + iIm(z'))} \\
+&= \overline{Re(z)Re(z') - Im(z)Im(z') + i(Re(z)Im(z') + Re(z')Im(z))} \\
+&= Re(z)Re(z') - Im(z)Im(z') - i(Re(z)Im(z') + Re(z')Im(z))\\
+&= \overline{z} \times \overline{z'}
+\end{array}
+$$
+\item $$z \times \frac{1}{z} = 1$$
+donc 
+$$\overline{z \times \frac{1}{z} } = 1$$
+$$\overline{z} \times \overline{\frac{1}{z}} = 1$$
+$$\overline{\frac{1}{z}} = \frac{1}{\overline{z}}$$
+($\overline{z} \neq 0$ car $z\neq 0$)
+\end{enumerate}
+\section{Module}
+Soit $z\in\C$. On appelle module de $z$ et on note $$|z| = \sqrt{Re(z)^2 + Im(z)^2}$$
+\begin{enumerate}
+\item $$|-4+3i| = \sqrt{(-4)^2 + (3)^2} = \sqrt{16+9} = 5$$
+\item 
+$$|z|^2 = Re(z)^2 + Im(z)^2 = z \times \overline{z}$$
+(question 3.4)
+\item Montrer l'équivalence 
+$$|z| = 0 \Leftrightarrow \sqrt{Re(z)^2+Im(z)^2} = 0$$
+$$\Leftrightarrow Re(z)^2 + Im(z)^2 = 0$$
+$$\Leftrightarrow \left\{\begin{array}{l}Re(z)^2 = 0 \\ Im(z)^2 = 0 \end{array}\right.$$
+$$\Leftrightarrow \left\{\begin{array}{l}Re(z) = 0 \\ Im(z) = 0 \end{array}\right.$$
+$$\Leftrightarrow z = 0$$
+(on raisonnera par double équivalence en montrant $(z = 0) \Rightarrow (|z| = 0)$ puis $(|z| = 0) \Rightarrow (z = 0)$
+\item Soit $z$ et $z'$ deux nombres complexes. Montrer que $$|z\times z' = |z|\times |z'|$$
+\item Soit $z\in\C$ et soit $n\in \N^*$ Montrer que 
+$$|z^n| = |z|^n$$
+\item Soit $z \neq 0$. Montrer que 
+$$\left|\frac{1}{z}\right| = \frac{1}{|z|}$$
+En déduire que si $z$ et $z'$ sont deux nombres complexes avec $z'\neq 0$, on a 
+$$\left|\frac{z}{z'}\right| = \frac{z}{|z'|}$$
+\item En vous inspirant d'une démonstration vue en cours, montrer que 
+$$|z+z'| \leq |z| + |z'|$$
+\end{enumerate}
+\section{Retour sur les trinômes du second degré}
+\begin{enumerate}
+\item Montrer que $i$ est solution de l'équation 
+$$x^2+1 = 0$$
+Calculer le discriminant du trinôme $x\mapsto x^2 +1$. Que remarquez vous ?
+\item Soit $a$ réel avec $a<0$. Montrer que 
+$$i\sqrt{-a}$$
+est d'une part bien défini et d'autre part solution de 
+$$x^2 = a$$
+\item R.O.C. Rappelez, sans le démontrer, la forme canonique d'un trinôme $f:ax^2+bx+c$ ($a\neq0$) en fonction de ses coefficients et de son discriminant. Vous démontrerez ensuite le résultat sur les racines d'un trinôme lorsque $\Delta > 0$ et lorsque $\Delta = 0$
+\item On s'intéresse au cas $\Delta < 0$. Montrer que, dans ce cas, le trinôme $f$ admet 2 racines complexes $x_1$ et $x_2$ que l'on explicitera en fonction des coefficients. On montrera de plus que $$\overline{x_1} = x_2$$
+\item Trouver les racines (éventuellement complexes) du trinôme $f:x\mapsto 2x^2 -6x +13$
+\end{enumerate}
+\section{Racine carrée d'un nombre complexe}
+\begin{enumerate}
+\item Soit $z_1 = a+ib$. On s'intéresse aux solutions de l'équation $$z^2 = a+ib$$. On note $z = x+iy$. En déduire un système de deux équations à deux inconnues, puis que pour tout nombre complexe $z_1$, l'équation $z^2 = a+ib$ a des solutions. On donnera notamment des relations entre $x$,$y$,$a$ et $b$
+\item Trouver une solution de l'équation 
+$$z^2 = 7 + 2i$$
+\end{enumerate}
+\end{document}

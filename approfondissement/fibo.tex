@@ -1,0 +1,109 @@
+\include{macro_sujet}
+
+\usepackage{tcolorbox}
+
+\fancyhead[L]{Sujet : La suite de Fibonacci}
+
+\begin{document}
+\center{\Large{Sujet : la suite de Fibonacci}}
+\flushleft
+Si au cours du sujet, le candidat repère ce qui lui semble être une erreur d'énoncé, il l'indique sur sa copie et continue sa composition. \newline
+
+Il est demandé au candidat une clarté dans les raisonnements qu'il mettra en place. \newline
+
+L'usage de la calculatrice est autorisé.\newline
+
+\section*{I - Etude d'une fonction}
+Dans la suite du sujet, on note $f$ la fonction définie pour tout $x$ par $$f(x) = x^2-x-1$$
+\begin{enumerate}
+\item Quel est l'ensemble de définition de $f$ ?
+\item Calculer les racines de $f$. La racine positive de $f$ est noté $\varphi$ et la négative est noté $\psi$
+\item Dresser le tableau de signe de $f$
+\item Dresser le tableau de variation de $f$
+\item Tracer la courbe représentative de $f$
+\item Montrer de deux manières différentes que $$\varphi^2 = \varphi +1$$
+\item Montrer que $$\dfrac{1}{\varphi} = \varphi -1$$
+\item On note $(u_n)$ la suite définie par $$\left\lbrace \begin{array}{l}
+u_0 = 1\\
+\forall n \in \N, u_{n+1} = 1 + \dfrac{1}{u_n}
+\end{array}
+\right.$$
+On admet que $(u_n)$ admet une limite $\ell$ lorsque $n$ tend vers l'infini. Que dire de la limite de $(u_{n+1})$ ?
+\item Montrer alors que 
+$$\ell = \varphi$$
+\item Calculer, à l'aide de la calculatrice, $u_{50}$. Que constatez vous ?
+\end{enumerate}
+\section*{II - Quelques résultats sur les rationnels et les irrationnels}
+On rappelle qu'un nombre $x \in \R$ est dit rationnel s'il existe $p \in \Z$ et $q\in \N^*$  tels que $$x = \dfrac{p}{q}$$ L'ensemble des rationnels est noté $\Q$. L'ensemble $\R \backslash \Q$ est l'ensemble des irrationnels.\newline
+
+Tout nombre rationnel s'écrit $$\dfrac{p}{q}$$ avec $p\in \Z$, $q\in \N*$ et $p$ et $q$ premier entre eux c'est à dire pgcd($p$,$q$)=1)
+\begin{enumerate}
+\item Montrer que le produit de deux rationnels est un rationnel
+\item Montrer que la somme de deux rationnels est un rationnel
+\item Montrer que l'inverse d'un rationnel non nul est un rationnel
+\item En déduire que si $a$ est irrationnel et $b$ est rationnel alors $a\times b$ est forcément un irrationnel
+\item Montrer que si $a$ est irrationnel et $b$ est rationnel alors $a+b$ est forcément irrationnel
+\item La somme de deux irrationnels est-elle irrationnelle ?
+\item Le produit de deux irrationnels est-il irrationnel ?
+\item On dit qu'un nombre $n \in \N$ est pair s'il existe $k\in\N$ tel que $n= 2k$. On dit qun nombre $n\in \N$ est impair s'il existe $k\in\N$ tel que $n=2k+1$. Montrer que $$n \text{ impair} \Rightarrow n^2 \text{ impair}$$
+Comment s'appelle la raisonnement qui permet de déduire que 
+$$\boxed{n^2 \text{ pair} \Rightarrow n \text{ pair}}$$
+\item On va montrer que $\sqrt{2}$ est irrationnel. On suppose par l'absurde que $\sqrt{2}$ est irrationnel et donc on suppose l'existence de $p \in \N^*$ et $q \in \N^*$ tel que $$\sqrt{2} = \dfrac{p}{q}$$ avec $p$ et $q$ premiers entre eux
+\begin{enumerate}
+\item Justifier que $p\in \N^*$
+\item Montrer que 
+$$p^2 = 2 q^2$$
+En déduire que $p$ est pair
+\item Montrer alors, en remplaçant $p$ par un certain $2k$ que $q$ est pair
+\item Quelle contradiction vient d'arriver ? On en déduit que $\sqrt{2}$ est irrationnel
+\end{enumerate}
+\item En utilisant une démonstration analogue, on peut montrer que $\sqrt{5}$ est irrationnel. En utilisant les questions 4 et 5, montrer que $\varphi$ est irrationnel
+\end{enumerate}
+\section*{III - Suites récurrentes linéaires d'ordre 1}
+Soit $a$ et $b$ deux réels. On s'interesse aux suites définies par $$\left\lbrace \begin{array}{l}
+u_0 = u_0 \quad (\text{donné})\\
+\forall n \in \N, u_{n+1} = au_n +b
+\end{array}
+\right.$$
+\begin{enumerate}
+\item On s'interesse d'abord au cas $a=1$. Comment appelle-t-on alors ce type de suite. Donner le terme général de $u_n$. Que dire de la limite ?
+\item On suppose maintenant $a\neq 1$. On définie la suite $(v_n)$ par $$v_n = u_n - \dfrac{b}{1-a}$$
+Montrer que $(v_n)$ est géométrique de raison $a$ et de premier terme que l'on précisera
+\item En déduire une expression du terme général de $(v_n)$ puis une expression du terme général de $(u_n)$
+\item On suppose ici $0 < a < 1$. Trouver alors la limite de $u_n$ 
+\end{enumerate}
+\section*{IV - Suites récurrentes linéaires d'ordre 2}
+Soit $a$ et $b$ dans $\R$. On dit qu'une suite $u_n$ vérifie $E_{(a,b)}$ si pour tout $n\in \N$, 
+$$u_{n+2} = au_{n+1} + bu_n$$
+De plus on note 
+$$g_{(a,b)} : x\mapsto x^2-ax-b$$ et on note $\Delta_{(a,b)}$ son discriminant
+\begin{enumerate}
+\item On suppose tout d'abord que $\Delta_{(a,b)} > 0$. On admet alors que les suites $(u_n)$ qui vérifient $E_{(a,b)}$ sont de la forme 
+$$u_n = \lambda r_1^n + \mu r_2^n $$
+où $\lambda$ et $\mu$ sont des réels quelconque et $r_1$, $r_2$ sont les deux racines de $g_{(a,b)}$\newline
+
+
+Exprimer alors $\lambda$ et $\mu$ en fonction de $u_0$, $u_1$, $a$ et $b$
+\item On suppose maintenant que $\Delta_{(a,b)} = 0$. On admet alors que les suites $(u_n)$ qui vérifient $E_{(a,b)}$ sont de la forme 
+$$u_n = (\lambda + \mu n)r_0^n $$
+où $\lambda$ et $\mu$ sont des réels quelconque et $r_0$ est l'unique racine de $g_{(a,b)}$ (on suppose $r_0 \neq 0$)\newline
+
+
+Exprimer alors $\lambda$ et $\mu$ en fonction de $u_0$, $u_1$, $a$ et $b$
+\end{enumerate}
+\section*{V - Suite de Fibonacci}
+On définit la suite de Fibonacci $(\mathcal{F}_n)$ par 
+$$\left\lbrace \begin{array}{l}
+u_0 = 0 \\
+u_1 = 1\\
+\forall n \in \N, \mathcal{F}_{n+2} = \mathcal{F}_{n+1} + \mathcal{F}_n
+\end{array}
+\right.$$
+\begin{enumerate}
+\item Calculer les 11 premiers termes de la suite de Fibonacci (de $\mathcal{F}_0$ à $\mathcal{F}_{10}$)
+\item Exprimer, à l'aide des parties I et III, le terme général de $\mathcal{F}_n$ Cette formule s'appelle la formule de ($\rho$) Binet
+\item Montrer que $$\dfrac{\mathcal{F}_{n+1}}{\mathcal{F}_n} \underset{n \rightarrow \infty}{\longrightarrow} \varphi$$
+(\emph{Indication : on pourra commencer par remarquer que $|\psi| < 1$})
+\item Calculer $\dfrac{\mathcal{F}_{10}}{\mathcal{F}_{9}}$. Que remarquez-vous ?
+\end{enumerate}
+\end{document}

@@ -1,0 +1,153 @@
+\include{macro_sujet}
+
+\fancyhead[L]{Sujet : Les complexes}
+
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\begin{document}
+\center{Sujets : les complexes}
+\flushleft
+Si au cours du sujet, le candidat repère ce qui lui semble être une erreur énoncé, il l'indique sur sa copie et continue sa composition. \newline
+
+Il est demandé au candidat une clarté dans les raisonnements qu'il mettra en place. \newline
+
+L'usage de la calculatrice est interdit.\newline
+
+Soit $A$ un ensemble. On définit une loi sur cette ensemble comme une fonction qui à 2 éléments de $A$ associe un élément de $A$ (exemple : $+$ est une loi sur $\R$ car à $a$ et $b$, elle associe $a+b\in\R$)\newline
+
+On considère une loi $\otimes$ sur un ensemble $A$. 
+\begin{itemize}
+\item Soit $e\in A$. On dit que $e$ est un neutre pour $\otimes$ si pour tout $x\in A$, on a
+$$e\otimes x = x \otimes e = x$$
+(par exemple 0 est un neutre pour la loi $+$ sur $\R$ car $a+ 0 = 0+a = a$ pour tout $a$ réel)
+\item On dit que $\otimes$ est commutative sir pout tout $x$ et $y$ dans $A$, on a 
+$$x\otimes y = y\otimes x$$
+(exemple, la loi $+$ est commutative car $a+b=b+a$ pour tout $a$ et $b$ réel)
+\item On suppose que $\otimes$ admet un élément neutre $e$. Soit $x\in A$. On dit que $A$ est inversible pour $\otimes$ s'il existe $y$ tel que 
+$$x\otimes y = y \otimes x = e$$
+(exemple : si $a\in \R$, $a$ est inversible pour la loi $+$ car $a+ (-a) = 0$)
+\end{itemize}
+Si $\oplus$ et $\otimes$ sont deux lois sur $\R$ on dit que $\otimes$ est distributive sur $\oplus$ si pour tout $x,y,z\in A$, on a 
+$$x\otimes(y\oplus z) = (x\otimes y) \oplus (x\otimes z)$$
+\section{Préliminaires}
+\begin{enumerate}
+\item Soit $A$ un ensemble et $\otimes$ une loi sur cet ensemble. Soit $e\in A$ et $e' \in A$ deux neutres pour $\otimes$. En calculant $e\otimes e'$ et $e' \otimes e$ ainsi qu'en utilisant les définition d'un neutre, montrer que $$e = e'$$
+
+Le neutre, s'il existe, est unique
+\item Soit $A$ un ensemble et $\otimes$ une loi de neutre $e$. Soit $x\in A$ inversible. Soit $y$ et $z$ deux inverses de $x$. En vous inspirant de la question précédente, et en utilisant la définition d'un inverse, montrer $$y = z$$
+
+Un élément inversible admet un unique inverse
+\end{enumerate}
+\section{Propriétés de $\R^2$}
+On note $\R^2$ l'ensemble des couples de réels (c'est-à-dire les points du plan...) 
+$$\R^2 = \{(x,y)\}_{x,y\in\R}$$
+((1,-3), (2,4) et (3,0) sont par exemples des éléments de $\R^2$\newline
+
+On munit $\R^2$ des lois suivantes : pour tout couples $(x,y)$ et $(x',y')$ de $\R^2$
+$$(x,y) + (x',y') = (x+x',y+y')$$
+$$\lambda (x,y) = (\lambda x, \lambda y) \quad (\lambda \in \R)$$
+$$(x,y) \times (x',y') = (xx' - yy',xy'+x'y)$$
+De plus, pour un couple $(x,y)$ de $\R^2$, on note $(x,y)^2 = (x,y) \times (x,y)$\newline
+
+On confond un élément de $\R^2$ de la forme $(x,0)$ avec le nombre réel associé $x$ (en fait on assimile la droite des réels à la droite des abscisses...)\newline
+
+On admet que $$(x,y) = (x',y') \Leftrightarrow \left\{ \begin{array}{l} x = x' \\ y = y' \end{array} \right.$$
+\begin{enumerate}
+\item Soit $(x,y)$ un couple de $\R^2$. Calculer $(0,0) + (x,y)$
+En déduire que $(0,0)$ est un neutre pour $+$ sur $\R^2$
+\item Soit $(x,y)$ un couple de $\R^2$. Calculer $(1,0) \times (x,y)$
+En déduire que $(1,0)$ est un neutre pour $\times$ sur $\R^2$
+\item Soit $(x,y)$ un couple de $\R^2$. montrer que son inverse pour la loi $+$ est le couple $(-x,-y)$
+\item Soit $(x,y)$ un couple de $\R^2$. Calculer $(0,0) \times (x,y)$
+En déduire que $(0,0)$ n'a pas d'inverse pour la loi $\times$
+\item Soit $(x,y)\in \R^2$, $(x,y) \neq (0,0)$. Montrer alors que $(x,y)$ admet un inverse pour la loi $\times$ que l'on note $\frac{1}{(x,y)}$ (on résoudra un système et on explicitera $\frac{1}{(x,y)}$ par ses coordonnées)\newline
+
+Ainsi, pour tout $(x,y) \neq (0,0)$
+$$\boxed{(x,y) \times \frac{1}{(x,y)} = (1,0)}$$
+\item Montrer $(0,1)^2 = (-1,0)$\newline
+
+Alors en notant $i = (0,1)$ et en confondant $(-1,0)$ avec $-1$ on obtient la relation fondamentale des complexes 
+$$\boxed{i^2 = -1}$$
+NB : Il n'y a pas d'erreurs d'énoncé : c'est tout le propre des complexes d'avoir des nombres qui, élevés au carré, font des nombres négatifs
+\item R.O.C., rappelez le théorème de décomposition selon 2 vecteurs non colinéaires
+\item Montrer que les vecteurs $\covec{1}{0}$ et $\covec{0}{1}$ ne sont pas colinéaires
+\item Soit $(x,y)\in \R^2$. Ecrire sa décomposition selon $(1,0)$ et $(0,1)$.\newline
+
+On déduit que tout élément $z$ de $\R^2$, on peut trouver $a$ et $b$ tels que 
+$$z = a(1,0) + b(0,1) = a + ib$$
+Cette forme est appelé écriture algébrique.\newline
+
+A partir de maintenant 
+$$\C = \{a+ib\}_{a,b\in\R}$$
+On a $\C \simeq \R^2$ (c'est presque égal, il y a juste une ou deux petites nuances)\newline
+
+Si $z\in \C$, on dit que $z$ est un complexe. $\C$ est appelé l'ensemble des complexes et on a $\R \subset \C$\newline
+
+Si $z = a+ib$, $a$ est appelée partie réelle de $z$ et notée $Re(z)$ et $b$ est appelée partie imaginaire de $z$ et notée $Im(z)$\newline
+
+Ainsi pour tout $z\in\C$ $$\boxed{z = Re(z) + i Im(z)}$$
+
+Si $Im(z) = 0$, alors $z$ est réel\newline
+Si $Re(z) = 0$, on dit que $z$ est un imaginaire pur
+Si $Im(z) = Re(z) = 0$, alors $z = 0$\newline
+
+On admet que $$a+ib = a'+ib' \Leftrightarrow \left\{ \begin{array}{l} a = a' \\ b = b' \end{array} \right.$$
+(identification des parties réelles et imaginaires)\newline
+
+\item On admet que la loi $\times$ est distributive sur $+$. On considère le nombre complexe $3+2i$. Donner sa partie réelle, sa partie imaginaire et calculer $(3+2i)^2$
+\item Soit $z\in\C$. Montrer, en utilisant la définition ou la distributivité de $\times$ sur $+$, que  
+$$\boxed{z^2 = Re(z)^2 - Im(z)^2 + 2iRe(z)Im(z)}$$
+\end{enumerate}
+\section{Conjugué}
+Soit $z = a+ib \in \C$. On appelle conjugué de $z$ et on note $\overline{z}$ le nombre complexe $$\overline{z} = a - ib$$
+\begin{enumerate}
+\item Calculer $\overline{3 + i}$
+\item Soit $z\in\C$ \begin{enumerate} \item On suppose $Im(z) = 0$. Montrer que $\overline{z} = z$ \item On suppose $\overline{z} = z$. Montrer que $Im(z) = 0$\end{enumerate} Ainsi on a montré $$\boxed{\overline{z} = z \Leftrightarrow Im(z) = 0 \Leftrightarrow z \text{ réél}}$$
+\item Montrer que $$\overline{\overline{z}} = z$$
+\item Exprimer, en fonction de $Re(z)$ et $Im(z)$, le nombre 
+$$z \times \overline{z}$$
+En déduire que $z \times \overline{z}\in\R$
+\item Soit $z$ et $z'$ complexes $$\overline{z + z'} = \overline{z} + \overline{z'}$$
+\item Soit $z$ et $z'$ complexes $$\overline{z \times z'} = \overline{z} \times \overline{z'}$$
+\item Soit $z\neq 0$. Montrer que 
+$$\overline{\frac{1}{z}} = \frac{1}{\overline{z}}$$
+\end{enumerate}
+\section{Module}
+Soit $z\in\C$. On appelle module de $z$ et on note $$|z| = \sqrt{Re(z)^2 + Im(z)^2}$$
+\begin{enumerate}
+\item Calculer le module de $-4+3i$
+\item Montrer que 
+$$|z|^2 = z\times \overline{z}$$
+\item Montrer l'équivalence 
+$$|z| = 0 \Leftrightarrow z = 0$$
+(on raisonnera par double équivalence en montrant $(z = 0) \Rightarrow (|z| = 0)$ puis $(|z| = 0) \Rightarrow (z = 0)$
+\item Soit $z$ et $z'$ deux nombres complexes. Montrer que $$|z\times z' = |z|\times |z'|$$
+\item Soit $z\in\C$ et soit $n\in \N^*$ Montrer que 
+$$|z^n| = |z|^n$$
+\item Soit $z \neq 0$. Montrer que 
+$$\left|\frac{1}{z}\right| = \frac{1}{|z|}$$
+En déduire que si $z$ et $z'$ sont deux nombres complexes avec $z'\neq 0$, on a 
+$$\left|\frac{z}{z'}\right| = \frac{z}{|z'|}$$
+\item En vous inspirant d'une démonstration vue en cours, montrer que 
+$$|z+z'| \leq |z| + |z'|$$
+\end{enumerate}
+\section{Retour sur les trinômes du second degré}
+\begin{enumerate}
+\item Montrer que $i$ est solution de l'équation 
+$$x^2+1 = 0$$
+Calculer le discriminant du trinôme $x\mapsto x^2 +1$. Que remarquez vous ?
+\item Soit $a$ réel avec $a<0$. Montrer que 
+$$i\sqrt{-a}$$
+est d'une part bien défini et d'autre part solution de 
+$$x^2 = a$$
+\item R.O.C. Rappelez, sans le démontrer, la forme canonique d'un trinôme $f:ax^2+bx+c$ ($a\neq0$) en fonction de ses coefficients et de son discriminant. Vous démontrerez ensuite le résultat sur les racines d'un trinôme lorsque $\Delta > 0$ et lorsque $\Delta = 0$
+\item On s'intéresse au cas $\Delta < 0$. Montrer que, dans ce cas, le trinôme $f$ admet 2 racines complexes $x_1$ et $x_2$ que l'on explicitera en fonction des coefficients. On montrera de plus que $$\overline{x_1} = x_2$$
+\item Trouver les racines (éventuellement complexes) du trinôme $f:x\mapsto 2x^2 -6x +13$
+\end{enumerate}
+\section{Racine carrée d'un nombre complexe}
+\begin{enumerate}
+\item Soit $z_1 = a+ib$. On s'intéresse aux solutions de l'équation $$z^2 = a+ib$$. On note $z = x+iy$. En déduire un système de deux équations à deux inconnues, puis que pour tout nombre complexe $z_1$, l'équation $z^2 = a+ib$ a des solutions. On donnera notamment des relations entre $x$,$y$,$a$ et $b$
+\item Trouver une solution de l'équation 
+$$z^2 = 7 + 2i$$
+\end{enumerate}
+\end{document}
