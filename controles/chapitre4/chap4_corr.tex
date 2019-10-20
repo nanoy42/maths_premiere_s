@@ -1,0 +1,116 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 4}
+
+\usepackage{tcolorbox}
+
+\include{algtolatex}
+
+\begin{document}
+\center
+\Large Contrôle de cours (correction)
+\flushleft
+\center
+Suites
+\flushleft \normalsize
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+On peut générer une suite de 3 manières : explicitement (exemple pour tout $n$, $u_n = n$), par récurrence : $$\left\{\begin{array}{l} u_0 = 1 \\ \forall n \in \N \quad u_{n+1} = \sqrt{u_n}\end{array}\right.$$ et implicitement
+
+On appelle suite arithmétique de raison $r$ et de premier terme $u_0$ la suite définie par $$\left\{\begin{array}{l} u_0 = u_0 \\ \forall n \in \N \quad u_{n+1} = u_n + r\end{array}\right.$$On a alors $$u_n = u_{n-1} + r = u_{n-2} + 2r = \ldots = u0 + nr$$ De plus $u_{n+1} -u_n = r$ pour tout $n$ dans $\N$ donc $(u_n)$ est strictement croissante si $r>0$, constante si $r=0$ et strictement décroissante si $r< 0$
+\subsection*{Exercice 2 (Etude d'une suite, temps conseillé : 20 min) : }
+\begin{enumerate}
+\item A $t = n min$, la température de l'eau est $u_n$ et elle va prendre 2 degrés Celsius avant d'arriver $t = n+1 min$. Ainsi la température à $t = n+1 min$ est de 2 degrés plus élevée que celle à $t=n min$ : $$\boxed{u_{n+1} = u_n +2}$$ La température de l'eau étant initialement de $25$ degrés Celsius, on a $$\boxed{u_0 = 25}$$ $(u_n)$ est la suite arithmétique de raison 2 et de premier terme 25
+\item On déduit que pour tout $n\in \N$, 
+$$\boxed{u_n = 25 + 2n}$$
+\item Suite arithmétique de raison positive don c$(u_n)$ est (strictement) croissante
+\item On a calculé les 10 premiers termes : \newline
+\begin{tabularx}{\linewidth}{|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+$n$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+$u_n$ & 25 & 27 & 29 & 31 & 33 & 35 & 37 & 39 & 41 & 43 \\ \hline 
+\end{tabularx}\newline 
+puis on les a placé sur un graphe...\newline
+\includegraphics[scale=0.2]{chap4_corr_ill1.png}
+
+\item Voici un algorithme qui convient \newline
+\begin{algobox}
+\Variables
+\Ligne u EST\_DU\_TYPE NOMBRE
+\Ligne A EST\_DU\_TYPE NOMBRE
+\Ligne N EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR A
+\Ligne u PREND\_LA\_VALEUR 25
+\Ligne N PREND\_LA\_VALEUR 0
+\Tantque{(u < A)}
+\DebutTantQue
+\Ligne N PREND\_LA\_VALEUR N+1
+\Ligne u PREND\_LA\_VALEUR u+2
+\FinTantQue
+\Ligne AFFICHER N
+\FinAlgo
+\end{algobox}
+\item On a
+$$u_n \geq 100$$
+$$\Leftrightarrow 25 + 2n \geq 100$$
+$$\Leftrightarrow 2n \geq 75$$
+$$\Leftrightarrow n \geq 37,5$$
+\item Au bout de 38 minutes (ou 37 minutes et 30 secondes si l'on suppose la chauffe linéaire entre les minutes $n$ et $n+1$)
+\item Mauvaise car la température tendrait vers l'infini 
+\end{enumerate}
+\subsection*{Exercice 3 (Limite d'une suite géométrique, temps conseillé : 20 min) : }
+\begin{enumerate}
+\item On appelle suite arithmétique de raison $q$ et de premier terme $v_0$ la suite définie par $$\left\{\begin{array}{l} v_0 = v_0 \\ \forall n \in \N \quad v_{n+1} = qv_n\end{array}\right.$$
+On a alors pour tout $n$, $$\boxed{v_n = v_0 q^n}$$
+\item Pour tout $n\in \N$, $v_n = v_0\times1^n = v_0$
+\item 
+$$v_n \geq A$$
+$$v_0 q^n \geq A$$
+$$q^n \geq \frac{A}{v_0}$$
+$$\ln(q^n) \geq \ln\left(\frac{A}{v_0}\right)$$
+$$n\ln(q) \geq \ln\left(\frac{A}{v_0}\right)$$
+$$\boxed{n\geq \frac{\ln(\frac{A}{v_0})}{\ln(q)}}$$
+(on ne change pas le sens de l'inégalité car $\ln(q) > 0$ car $q>1$). Pour tout $A$, il existe $N$ tel que pour tout $n \geq N$, $u_n \geq A$ donc $$\boxed{v_n \underset{n\rightarrow \infty}{\longrightarrow} +\infty}$$
+\item
+$$v_n \leq \varepsilon$$
+$$v_0 q^n \leq \varepsilon$$
+$$q^n \leq \frac{\varepsilon}{v_0}$$
+$$\ln(q^n) \leq \ln\left(\frac{\varepsilon}{v_0}\right)$$
+$$n\ln(q) \leq \ln\left(\frac{\varepsilon}{v_0}\right)$$
+$$\boxed{n \geq \frac{\ln\left(\frac{\varepsilon}{v_0}\right)}{\ln(q)}}$$
+On inverse le sens de l'inégalité car $\ln(q) < 0$. Ainsi tout intervalle ouvert centré en 0 contient toutes les valeurs de la suite à partir d'un certain rang donc 
+$$\boxed{v_n \underset{n\rightarrow \infty}{\longrightarrow} 0}$$
+\end{enumerate}
+\subsection*{Exercice 4 (Exercices classiques du bac (abordable en première), temps conseillé : 20 min) : }
+\begin{enumerate}
+\item On a $$\boxed{u_0 = 100}$$
+$$u_1 =  \frac{3}{4}u_0 + 6 =  \frac{3}{4}\times 100 + 6 = 75 + 6$$
+$$\boxed{u_1 = 81}$$
+$$u_2 =  \frac{3}{4}u_1 + 6 =  \frac{3}{4}\times 81 + 6 = \frac{243}{4} + 6 = \frac{243}{4} + \frac{24}{4}$$
+$$\boxed{u_2 = \frac{267}{4}}$$
+$$u_3 =  \frac{3}{4}u_2 + 6 =  \frac{3}{4}\times \frac{267}{4} + 6$$
+$$\boxed{u_3 = \frac{897}{16}}$$
+\item On a $$v_0 = u_0 - 24$$
+$$v_0 = 100 -24$$
+$$\boxed{v_0 = 76}$$
+De plus 
+$$\frac{v_{n+1}}{v_n} = \frac{u_{n+1} - 24}{u_n -24}$$
+$$\frac{v_{n+1}}{v_n} = \frac{\frac{3}{4}u_n + 6 -24}{u_n-24}$$
+$$\frac{v_{n+1}}{v_n} = \frac{\frac{3}{4}u_n -18}{u_n-24}$$
+$$\frac{v_{n+1}}{v_n} = \frac{3}{4}\frac{u_n -\frac{4}{3}18}{u_n-24}$$
+$$\frac{v_{n+1}}{v_n} = \frac{3}{4}\frac{u_n -24}{u_n-24}$$
+$$\boxed{\frac{v_{n+1}}{v_n} = \frac{3}{4}}$$
+\item Pour tout $n\in \N$, on a ainsi 
+$$v_n = v_0 \left(\frac{3}{4}\right)^n =  76 \times \left(\frac{3}{4}\right)^n$$
+or 
+$$v_n = u_n -24$$
+donc 
+$$u_n = v_n +24$$
+d'où
+$$\boxed{24 + 76 \times  \left(\frac{3}{4}\right)^n}$$
+\item $(v_n)$ est décroissante car $(v_n)$ est une suite géométrique de raison positive inférieure à 1 ($\displaystyle \frac{v_{n+1}}{v_n} = \frac{3}{4}\leq 1$) et $(u_n)$ est décroissante car $u_n = v_n +24$ et $v_n$ décroissante ($u_{n+1} - u_n = v_{n+1} + 24 - (v_n +24) = v_{n+1} - v_n \leq 0$)
+\item $v_n$ est une suite géométrique dont la raison est comprise entre 0 et 1 (strictement) donc $$v_n \underset{n\rightarrow \infty}{\longrightarrow} 0$$Ainsi par passage à la limite dans $$u_n = v_n +24$$, on obtient, $$\boxed{u_n \underset{n\rightarrow \infty}{\longrightarrow} 24}$$
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}

@@ -1,0 +1,107 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 8}
+
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\begin{document}
+\center
+\Large Contrôle de cours
+\flushleft
+\center
+Statistiques
+\flushleft \normalsize
+Durée du contrôle : 1h\newline
+Ce sujet comporte 2 pages\newline
+La calculatrice est autorisée
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+Après avoir rappelé la formule donnant la variance d'une série statistique, vous montrerez la formule de König-Huygens
+\subsection*{Exercice 2 (Caractère discret, temps conseillé : 15 min) : }
+Lors d'un devoir commun d'élèves hétérogènes, évaluant 10 capacités, on a les résultats suivants\newline
+
+\begin{tabularx}{\linewidth}{|X|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+N (*) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\ \hline
+Effectif & 10 & 8 & 7 & 3 & 2 & 3 & 5 &9 & 11 & 13 & 15 \\ \hline
+\end{tabularx}\newline
+
+(*) : Nombre de capacités validées
+\begin{enumerate}
+\item Pourquoi parle t-on de caractère discret ? Quel est la différence avec un caractère continu ?
+\item Calculer l'effectif de cette série statistique
+\item Mettre dans un tableau les fréquences
+\item Calculer la moyenne, la médiane, les quartiles, l'écart inter-quartiles, l'étendue, la variance et l'écart-type de cette série statistique. Interpréter chacune des valeurs obtenues et leur utilité. 
+\item Représenter l'histogramme et la boîte à moustache de cette série statistique
+\item Pourquoi parle-ton d'élèves hétérogènes \emph{(On attend ici un raisonnement basé sur (médiane, écart-interquartiles) ou sur (moyenne, écart-type) ou sur les deux)}
+\end{enumerate}
+\subsection*{Exercice 3 (Caractère continu, temps conseillé : 15 min) : }
+Le ministère de la jeunesse décide de faire une enquête sur le temps passé sur internet par des jeunes. Ils font d'abord une enquête sur les 13-18 ans puis sur les 18-25 ans. C'est Max, le stagiaire qui a recopié les chiffres et il a fait un peu n'importe quoi : \newline
+
+
+\textbf{1ère série (13-18 ans)}\newline
+
+
+Effectif : 14803\newline
+
+
+\begin{tabularx}{\linewidth}{|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+T (*) & 0-2h  & 2-4h & 4-6h & 6-8h & 8-10h & 10-12h & 12-14h & 14-16h & 16-18h & 18-20h & 20-22h & 22-24h & 24-26h & 26-28h & 28-30h\\ \hline     
+Effec- tif & 78 & 100 & 254 & 563 & 1998 & 4257 & 3048 & 1650 & 1150 & 590 & 500 & ..... & 187 & 121 & 95 \\ \hline
+\end{tabularx}\newline
+
+
+(*) temps passé, en heures, par semaine\newline
+
+\textbf{2ème série (18-25 ans)}\newline
+
+Effectif : \newline
+
+\begin{tabularx}{\linewidth}{|X|X|X|X|X|X|X|X|X|}
+\hline
+T (*) & 0-2h  & 2-4h & 4-6h & 6-8h & 8-10h & 10-12h & 12-14h & 14-16h\\ \hline     
+Fréquence & 0,0011 & 0,0028 & 0,0062 & 0,0222 & 0,0393 & 0,0638 & 0,1269 & 0,1657\\ \hline
+\end{tabularx}\newline
+\begin{tabularx}{\linewidth}{|X|X|X|X|X|X|X|X|X|}
+\hline
+T (*)  & 16-18h & 18-20h & 20-22h & 22-24h & 24-26h & 26-28h & 28-30h & RIEN ICI\\ \hline     
+Fréquence  & 0,2712 & 0,1491 & ..... & 0,0434 & 0,0266 & 0,0110 & 0,0066 & RIEN ICI \\ \hline
+\end{tabularx}\newline
+
+(*) temps passé, en heures, par semaine\newline
+\begin{enumerate}
+\item Compléter les données manquantes (2 cas à compléter)
+\item Raconter tout ce que vous pouvez sur la première série statistique (moyenne, médiane, étendue, quartiles, écart-type, variance, écart interquartiles, histogramme, diagramme en boites,...). Interpréter
+\item Calculer la moyenne, la variance et l'écart type de la deuxième série statistique. Interpréter.
+\item Comparer les résultats
+\end{enumerate}
+\subsection*{Exercice 4 (Quelques nouveaux outils, temps conseillé : 20 min) : }
+On définit (en reprenant les mêmes notations du cours) : 
+\begin{itemize}
+\item La moyenne géométrique d'une série statistique 
+$$\overset{\circ}{x} = \sqrt[n]{\prod_{i=1}^p f_i x_i}$$
+\item L'écart arithmétique 
+$$\overset{\sim}{e} = \frac{1}{n}\sum_{i=1}^p |x_i - \overline{x}|$$
+\item Le critère de dispersion 
+$$C_V = \frac{\sigma}{\overline{x}}\times 100$$
+\item Coefficient d'asymétrie de Pearson 
+$$\lambda_x = \frac{\overline{x} - Q_2}{\sigma}$$
+\item Le coefficient de Yule 
+$$\mathscr{Y}_x = \frac{Q_3+Q_1-2Q_1}{Q_3-Q_1}$$
+\item Coefficient d'aplatissement de Fischer
+$$\mathscr{F}_x = \frac{1}{n}\frac{\displaystyle \sum_{i=1}^p (x_i - \overline{x})^4}{\sigma^4}$$
+\end{itemize}
+\begin{enumerate}
+\item Calculer leur valeur pour la série statistique de l'exercice 1
+\item Essayer d'interpréter chacun des termes rapidement
+\item Montrer que 
+$$\sqrt{ab} \leq \frac{a+b}{2}$$
+pour tout $a$ et $b$ réels.
+\emph{(Indication : après avoir remarqué que $(a-b)^2 \geq 0$, développer et ajouter $4ab$ des deux côtés pour conclure)}
+Ce qu'on vient de faire permet, au prix d'une récurrence de montrer 
+$$\overset{\circ}{x} \leq \overline{x}$$
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}

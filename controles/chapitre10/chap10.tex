@@ -1,0 +1,93 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 10}
+
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\begin{document}
+\center
+\Large Contrôle de cours
+\flushleft
+\center
+Variables aléatoires
+\flushleft \normalsize
+Durée du contrôle : 1h30\newline
+Ce sujet comporte 4 pages\newline
+La calculatrice est autorisée
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+Soit $X$ une variable aléatoire sur $(\Omega,P)$. On note $X(\Omega) = \{x_1,x_2,\ldots,x_p\}$. Rappeler la définition de l'espérance, variance et écart-type de $X$. Redémontrer les formules suivantes $$E(aX+b) = aE(X)+b$$ et $$V(aX) = a^2V(X)$$
+\subsection*{Exercice 2 (Un jeu de casino, temps conseillé : 20 min) : }
+On joue à un jeu : les droits d'entrées sont de 2 euros (il faut payer 2 euros pour faire une partie). Le joueur choisit alors une couleur parmi ($\clubsuit, \spadesuit, \diamondsuit, \heartsuit$) et une valeur parmi (2,3,4,5,6,7,8,9,V,D,R,A). Il pioche ensuite une carte au hasard dans un jeu de 52 cartes :
+\begin{itemize}
+\item Si la carte a la bonne couleur et la bonne valeur, il gagne 22 euros
+\item Si la carte a la bonne couleur ou (exclusif) la bonne valeur, on rembourse sa mise (il gagne 2 euros)
+\item SI la carte n'a rien en commun avec les choix du joueur, le joueur ne gagne rien
+\end{itemize}
+\begin{enumerate}
+\item Calculer les probabilités des évènements suivants \begin{itemize}
+\item $A$:"Le joueur tire la carte qui a la bonne couleur et la bonne valeur"
+\item $B$:"Le joueur tire une carte qui a uniquement la bonne couleur"
+\item $C$:"Le joueur tire une carte qui a uniquement la bonne valeur"
+\item $D$:"Le joueur tire une carte qui n'a ni la bonne valeur ni la bonne couleur"
+\end{itemize}
+\item On note $X$ la variable aléatoire qui compte le gain en euros. Donner $X(\Omega)$
+\item Etablir, à l'aide de la question 1, la loi de $X$
+\item Calculer $E(X)$. Quelle interprétation lui donner ? Joueriez-vous à ce jeu ?
+\item Si le joueur joue 100 fois à ce jeu. Combien, en moyenne, aura-t-il gagné (ou perdu) ?
+\item Calculer $V(X)$. Quelle interprétation lui donner
+\item Le joueur joue un nombre $n$ de fois. On note $Y$ la variable aléatoire qui compte le nombre de fois où le joueur a obtenu la bonne combinaison. Quelle loi suit $Y$ ?
+\item Calculer $P(Y \leq 2)$ pour $n= 50$. Comment interpréter ce résultat.
+\item Donner $E(Y)$ pour $n$ quelconque. A partir de combien d'essais peut-il espérer avoir 2 fois la combinaison gagnante ?
+\end{enumerate}
+\subsection*{Exercice 3 (Un peu de loi binomiale, temps conseillé : 15 min) : }
+\begin{enumerate}
+\item Rappeler la définition de la loi binomiale. Donner l'espérance et la variance de $X$ si $X \sim \mathscr{B}(n,p)$
+\item Un joueur de fléchette tire au centre avec une probabilité de 0,7. Il tire 20 fois. On note $X$ la variable aléatoire qui compte le nombre de fléchette qui vont au milieu. Quelle est la loi de $X$
+\item Calculer la probabilité qu'il y ait exactement 13 fléchettes au milieu
+\item Calculer la probabilité qu'il y ait moins de 7 fléchettes (7 inclus)
+\item Le joueur vient jouer tous les soirs. En moyenne combien met-il de fléchettes par soir
+\item Calculer $V(X)$. Quelle interprétation lui donner vous ?
+\item Ecrire un algorithme qui calcule $n!$, $n$ étant une variables (entière) à saisir par l'utilisateur. On suppose que cet algorithme est accessible dans tous les autres algorithmes par \begin{verbatim} factorielle(n) \end{verbatim}
+\item Ecrire un algorithme qui calcule $\binom{n}{k}$, $k$ et $n$ étant des entiers saisis par l'utilisateurs. On suppose que cet algorithme est accessible dans tous les autres algorithmes par \begin{verbatim} binom(k,n) \end{verbatim}
+\item Ecrire un algorithme qui calcule $P(X =k)$, où $X\sim \mathscr{B}(n,p)$, $k$ et $n$ étant des entiers saisis par l'utilisateur et $p$ un nombre entre 0 et 1 saisi par l'utilisateur (on utilisera pow(x,n) pour $x^n$)
+\end{enumerate}
+\subsection*{Exercice 4 (Loi géométrique, temps conseillé : 30-40 min) : }
+Soit $X$ une variable aléatoire sur $(\Omega,P)$ et soit $p \in ]0,1[$. On dit que $X$ suit la loi géométrique de paramètre $p$ si $X(\Omega) = \N$ et pour tout $k\in \N$, 
+$$P(X=k) = (1-p)^{k-1}p$$
+On note alors 
+$$X \sim \mathcal{G}(p)$$
+Cette loi est aussi appelée loi du premier succès
+\begin{enumerate}
+\item \emph{"Cette loi est aussi appelée loi du premier succès"}. En utilisant un arbre pondéré, expliquer cette affirmation. (On montrera que $(X=k)$ est l'évènement "le premier succès arrive après $k$ essais")
+\item Rappeler la formule donnant 
+$$\sum_{k=0}^n q^k = 1 + q + q^2 + \ldots + q^n$$
+où $q$ est un réel différent de $1$
+\item Comparer, avec des petits points 
+$$\sum_{k=0}^{n-1} a_k$$ et $$\sum_{k=1}^n a_{k-1}$$
+En déduire que 
+$$\sum_{k=1}^n q^{k-1} = \sum_{k=0}^{n-1} q^k$$
+\item Montrer alors que $$\sum_{k=1}^n P(X=k) = 1 - (1-p)^n$$
+\emph{On rappelle que $\displaystyle \sum_{k} \lambda a_k = \lambda \sum_{k} a_k$}
+\item On note $$\sum_{k=1}^\infty P(X=k) = \underset{n\rightarrow +\infty}{\lim} \sum_{k=1}^n P(X=k)$$ Déduire, de la question précédente, que $$\sum_{k=1}^\infty P(X=k) = 1$$ Est-ce rassurant ? \emph{On rappelle que si $0<q<1$, alors $\underset{n\rightarrow +\infty}{\lim} q^n =0$}
+\item On veut ici établir le résultat suivant : 
+$$\boxed{\sum_{k=1}^\infty kx^{k-1} = \frac{1}{(1-x)^2}}$$ pour tout $x\in ]0,1[$
+\begin{enumerate}
+\item On note $$f_n(x) = \sum_{k=0}^n x^k$$ Montrer que $f_n$ est dérivable et donner sa dérivée
+\item Ecrire $f_n(x)$ sous la forme d'un quotient grâce à la somme de termes en progression géométrique. Montrer que le quotient est dérivable et donner sa dérivée
+\item En déduire que 
+$$\sum_{k=1}^n kx^{k-1} = \frac{-(n+1)x^n(1-x) +(1-x^{n+1})}{(1-x)^2}$$
+\item En déduire, par une passage à la limite lorsque $n\rightarrow + \infty$ que si $0<x<1$ alors 
+$$\sum_{k=1}^\infty kx^{k-1} = \frac{1}{(1-x)^2}$$
+\end{enumerate}
+\item Montrer alors que, si $X\sim \mathcal{G}(p)$, alors $$\boxed{E(X) = \frac{1}{p}}$$
+\item Il est possible de montrer, avec des passages à la limite, que 
+$$\sum_{k=1}^\infty k^2x^{k-1} = \frac{2}{(1-x)^3}-\frac{1}{(1-x)^2}$$
+pour tout $x\in]0,1[$. Montrer alors que, si $X\sim \mathcal{G}(p)$
+$$\boxed{V(X) = \frac{1-p}{p^2}}$$
+\emph{(On pourra utiliser la formule de König-Huygens : $V(X) = E(X^2) - E(X)^2$)}
+\item On considère le jeu suivant : les 4 as d'un jeu de 52 cartes sont posés devant nous, face cachée. On pioche au hasard une carte parmi les 4. Si c'est l'as de coeur, on s'arrête. Sinon on remélange les cartes, et les redisposes et on recommence. On note $X$ la variable aléatoire qui compte le nombre de tirage avant que le jeu s'arrête\begin{enumerate} \item Expliquer pourquoi $X\sim \mathcal{G}(\frac{1}{4})$ \item Calculer $P(X = 3)$ \item Calculer $P(X \geq 7)$ \item Calculer $E(X)$ et $V(X)$. Interpréter \item La valeur de l'espérance vous parait-elle contre intuitive ?\end{enumerate}
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}

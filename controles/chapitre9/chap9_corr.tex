@@ -1,0 +1,175 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 9}
+
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\begin{document}
+\center
+\Large Contrôle de cours
+\flushleft
+\center
+Probabilités
+\flushleft \normalsize
+Durée du contrôle : 1h\newline
+Ce sujet comporte 2 pages\newline
+La calculatrice est autorisée
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+On note $$A = \{\omega_{a_1},\omega_{a_2},\ldots,\omega_{a_p},\omega_{c_1},\omega_{c_2},\ldots,\omega_{a_l}\}$$
+$$B = \{\omega_{b_1},\omega_{b_2},\ldots,\omega_{b_{p'}},\omega_{c_1},\omega_{c_2},\ldots,\omega_{a_l}\}$$
+$$A\cup B  = \{\omega_{a_1},\omega_{a_2},\ldots,\omega_{a_p},\omega_{b_1},\omega_{b_2},\ldots,\omega_{b_{p'}},\omega_{c_1},\omega_{c_2},\ldots,\omega_{a_l}\}$$
+$$A\cap B  = \{\omega_{c_1},\omega_{c_2},\ldots,\omega_{a_l}\}$$
+Alors 
+$$P(A) = P(\omega_{a_1}) + P(\omega_{a_2}) + \ldots + P(\omega_{a_p}) + P(\omega_{c_1}) + P(\omega_{c_2}) + \ldots + P(\omega_{c_l})$$ 
+$$P(B) = P(\omega_{b_1}) + P(\omega_{b_2}) + \ldots + P(\omega_{b_{p'}}) + P(\omega_{c_1}) + P(\omega_{c_2}) + \ldots + P(\omega_{c_l})$$
+$$P(A\cup B) = P(\omega_{a_1}) + P(\omega_{a_2}) + \ldots + P(\omega_{a_p}) +P(\omega_{b_1}) + P(\omega_{b_2}) + \ldots + P(\omega_{b_{p'}}) + P(\omega_{c_1}) + P(\omega_{c_2}) + \ldots + P(\omega_{c_l})$$
+$$P(A\cap B) = P(\omega_{c_1}) + P(\omega_{c_2}) + \ldots + P(\omega_{c_l})$$ D'où la formule $$\boxed{P(A\cup B) = P(A) + P(B) -P(A\cap B)}$$Si $A$ et $B$ sont disjoints alors $$P(A\cap B) = P(\varnothing) = 0$$ d'où $$\boxed{P(A\cup B) = P(A) + P(B)}$$ Soit $A$ un évènement. $A$ et $\overline{A}$ étant disjoints 
+ $$P(A\cup \overline{A}) = P(A) + P(\overline{A})$$
+ or 
+ $$A\cup \overline{A} = \Omega$$ donc 
+ $$1 = P(A) + P(\overline{A})$$ d'où la formule 
+ $$\boxed{P(\overline{A}) = 1 - P(A)}$$
+\subsection*{Exercice 2 (Petits exos OKLM, temps conseillé : 15 min) : }
+\begin{enumerate}
+\item Ici rien de bien compliqué, il suffit de suivre l'exercice et de faire attention au fait que le dé soit truqué
+\begin{enumerate}
+\item 
+\begin{tikzpicture}
+\tikzstyle{lettre}=[fill=white]
+\draw (0,3.5) -- (2,5.5) node[style=lettre] {F} node[midway,style=lettre]{$\frac{2}{3}$};
+\draw (0,3.5) -- (2,1.5) node [style=lettre] {P} node[midway,style=lettre]{$\frac{1}{3}$};
+\draw(2.2,5.5) -- (4,6.5) node[style=lettre] {F} node[midway,style=lettre]{$\frac{2}{3}$};
+\draw (2.2,5.5) -- (4,4.5) node[style=lettre] {P} node[midway,style=lettre]{$\frac{1}{3}$};
+\draw(2.2,1.5) -- (4,2.5) node[style=lettre] {F} node[midway,style=lettre]{$\frac{2}{3}$};
+\draw (2.2,1.5) -- (4,0.5) node[style=lettre] {P} node[midway,style=lettre]{$\frac{1}{3}$};
+\draw(4.2,6.5) -- (6,7) node[style=lettre] {F} node[midway,style=lettre]{$\scriptstyle 2/3$};
+\draw(4.2,6.5) -- (6,6) node[style=lettre] {P} node[midway,style=lettre]{$\scriptstyle 1/3$};
+\draw(4.2,4.5) -- (6,5) node[style=lettre] {F} node[midway,style=lettre]{$\scriptstyle 2/3$};
+\draw(4.2,4.5) -- (6,4) node[style=lettre] {P} node[midway,style=lettre]{$\scriptstyle 1/3$};
+\draw(4.2,2.5) -- (6,3) node[style=lettre] {F} node[midway,style=lettre]{$\scriptstyle 2/3$};
+\draw(4.2,2.5) -- (6,2) node[style=lettre] {P} node[midway,style=lettre]{$\scriptstyle 1/3$};
+\draw(4.2,0.5) -- (6,1) node[style=lettre] {F} node[midway,style=lettre]{$\scriptstyle 2/3$};
+\draw(4.2,0.5) -- (6,0) node[style=lettre] {P} node[midway,style=lettre]{$\scriptstyle 1/3$};
+\end{tikzpicture}\newline
+\item On note $A$ l'évènement : A:"il y a exactement 1 face tirée dans l'expérience". On peut écrire $A$ sous la forme $$A = \{FPP,PFP,PPF\}$$ Les 3 séquences qui composent $A$ ont chacune une probabilité $$\frac{1}{3}\times \frac{1}{3}\times \frac{2}{3}$$ de sortir donc $$P(A) = 3\times \left(\frac{1}{3}\times \frac{1}{3}\times \frac{2}{3}\right)$$ $$P(A) =\frac{1}{3}\times \frac{2}{3}$$
+$$\boxed{P(A) = \frac{2}{9}}$$
+\end{enumerate}
+\item Il fait faire attention ici car les probabilités (et même le nombre total de boule parfois) change entre les niveaux de l'arbre\newline
+\begin{tikzpicture}
+\tikzstyle{lettre}=[fill=white]
+\draw (0,3.5) -- (2,5.5) node[style=lettre] {R} node[midway,style=lettre]{$\frac{9}{16}$};
+\draw (0,3.5) -- (2,1.5) node [style=lettre] {N} node[midway,style=lettre]{$\frac{7}{16}$};
+\draw(2.2,5.5) -- (4,6.5) node[style=lettre] {R} node[midway,style=lettre]{$\frac{8}{17}$};
+\draw (2.2,5.5) -- (4,4.5) node[style=lettre] {N} node[midway,style=lettre]{$\frac{9}{17}$};
+\draw(2.2,1.5) -- (4,2.5) node[style=lettre] {R} node[midway,style=lettre]{$\frac{10}{16}$};
+\draw (2.2,1.5) -- (4,0.5) node[style=lettre] {N} node[midway,style=lettre]{$\frac{6}{16}$};
+\draw(4.2,6.5) -- (6,7) node[style=lettre] {R} node[midway,style=lettre]{$\scriptstyle 7/18$};
+\draw(4.2,6.5) -- (6,6) node[style=lettre] {N} node[midway,style=lettre]{$\scriptstyle 11/18$};
+\draw(4.2,4.5) -- (6,5) node[style=lettre] {R} node[midway,style=lettre]{$\scriptstyle 9/17$};
+\draw(4.2,4.5) -- (6,4) node[style=lettre] {N} node[midway,style=lettre]{$\scriptstyle 8/17$};
+\draw(4.2,2.5) -- (6,3) node[style=lettre] {R} node[midway,style=lettre]{$\scriptstyle 9/17$};
+\draw(4.2,2.5) -- (6,2) node[style=lettre] {N} node[midway,style=lettre]{$\scriptstyle 8/17$};
+\draw(4.2,0.5) -- (6,1) node[style=lettre] {R} node[midway,style=lettre]{$\scriptstyle 11/16$};
+\draw(4.2,0.5) -- (6,0) node[style=lettre] {N} node[midway,style=lettre]{$\scriptstyle 5/16$};
+\end{tikzpicture}\newline
+
+On note $B$ et $C$ les évènements $$B:\text{"Exactement 1 boule noire est tirée"}$$ $$C:\text{"Au moins 2 boules rouges sont tirées"}$$
+Alors 
+$$B = \{RRN,RNR,NRR\}$$
+donc 
+$$P(B) = \left(\frac{9}{16}\times \frac{8}{17}\times \frac{11}{18} \right) + \left(\frac{9}{16}\times \frac{9}{17}\times \frac{9}{17} \right) + \left(\frac{7}{16}\times \frac{10}{16}\times \frac{9}{17} \right)$$
+$$\boxed{P(B) = \frac{17171}{36992} \simeq 0,46}$$
+De plus 
+$$C = \{RRN,RNR,NRR,RRR\}$$
+donc 
+$$P(C) = P(B) + P(RRR)$$
+$$P(C) = \frac{17171}{36992} +\left(\frac{9}{16} \times \frac{8}{17} \times \frac{7}{18} \right)$$
+$$\boxed{P(C) = \frac{20979}{36992}\simeq 0,56}$$ 
+\end{enumerate}
+\subsection*{Exercice 3 (Probabilité conditionnelle et indépendance, temps conseillé : 35 min) : }
+\begin{enumerate}
+\item Dans le cas d'une probabilité uniforme,
+$$P(A\cap B) = \frac{\text{Card}(A\cap B)}{\text{Card}(\Omega)}$$ 
+$$P(B) = \frac{\text{Card}(B)}{\text{Card}(\Omega)}$$ 
+donc 
+$$P_B(A) = \frac{P(A\cap B)}{P(B)} = \frac{\frac{\text{Card}(A\cap B)}{\text{Card}(\Omega)}}{\frac{\text{Card}(B)}{\text{Card}(\Omega)}}$$
+puis en simplifiant par $\text{Card}(\Omega)$, 
+$$\boxed{P_B(A) = \frac{\text{Card}(A\cap B)}{\text{Card}(B)}}$$
+\item On a 
+$$A\cup B \subset B$$ donc 
+$$P(A\cup B) \leq P(B)$$
+d'où 
+$$\frac{P(A\cup B)}{P(B)}\leq 1$$
+On a $P(A\cup B) \geq 0$ et $P(B) > 0$ donc 
+$$0 \leq\frac{P(A\cup B)}{P(B)}$$ 
+Finalement
+$$\boxed{0 \leq P_B(A) \leq 1}$$
+\item On a $$B \subset \Omega$$ donc $$\Omega \cap B = B$$ Ainsi $$P_B(\Omega) = \frac{P(\Omega \cap B)}{P(B)} = \frac{P(B)}{P(B)} = 1$$
+\item On suppose $A_1$ et $A_2$ sont incompatibles, alors $B\cap A_1$ et $B \cap A_2$ sont incompatibles ($(B\cap A_1)\cap(B\cap A_2)= B\cap A_1\cap A_2 \cap B = B \cap \varnothing \cap \varnothing = \varnothing$)
+On a alors 
+$$P_B(A_1 \cup A_2) = \frac{P(B\cap(A_1\cup A_2))}{P(B)}$$
+$$P_B(A_1 \cup A_2) = \frac{P((B\cap A_1)\cup (B\cap A_2))}{P(B)}$$
+$$P_B(A_1 \cup A_2) = \frac{P((B\cap A_1)) + P((B\cap A_2))}{P(B)} \quad(\text{Car incompatibles})$$
+$$P_B(A_1 \cup A_2) = \frac{P(B\cap A_1)}{P(B)} + \frac{P(B\cap A_2)}{P(B)}$$
+$$\boxed{P_B(A_1 \cup A_2) = P_B(A_1) + P_B(A_2)}$$
+\item On a
+$$P_B(\varnothing) = \frac{P(B\cap \varnothing)}{P(B)}$$
+or $B\cap \varnothing = \varnothing$ et $P(\varnothing) =0$ donc 
+$$\boxed{P_B(\varnothing) = 0}$$
+\item Conséquence des questions 3 et 4 ($A\cup\overline{A} = \Omega$, $A$ et $\overline{A}$ disjoints)
+\item On a 
+$$P_B(A) = \frac{P(A\cup B)}{P(B)}$$
+et 
+$$\frac{P_A(B)P(A)}{P(B)} = \frac{P(A \cup B)}{P(A)}\times P(A) \times \frac{1}{P(B)} = \frac{P(A \cup B)}{P(B)}$$
+d'où
+$$P_B(A) = \frac{P_A(B)P(A)}{P(B)}$$
+\newline
+\item On a $$P(A\cap \overline{A}) = P(\varnothing) = 0$$
+or $$P(A) \neq 0$$
+$$P(\overline{A} \neq 0$$
+(car $0<P(A)<1$) donc
+$$P(A) \times P(\overline{A})\neq 0$$
+$$\boxed{P(A) \times P(\overline{A})\neq P(A\cap \overline{A})}$$
+Les évènements ne sont donc pas indépendants
+\item On a
+$$P(A\cap B) = P(\varnothing) = 0$$
+et 
+$$P(A) \neq 0$$
+$$P(B) \neq 0$$
+donc 
+$$\boxed{P(A\cap B) \neq P(A) \times P(B)}$$
+\item 
+$$A \text{ et } B \text{ indépendants} \Leftrightarrow P(A\cap B) = P(A)\times P(B) \Leftrightarrow \frac{P(A\cap B)}{P(B)} = P(A) \Leftrightarrow P_B(A) = P(A)$$
+\emph{"Si A et B sont indépendants, alors la probabilité de A sachant B est la probabilité de A : savoir si B est réalisé ne change donc rien : c'est en cela qu'ils sont indépendants"}
+\item On veut montrer le résultat suivant : si $A$ et $B$ sont indépendants alors $\overline{A}$ et $B$ le sont aussi
+\begin{enumerate}
+\item $A$ et $B$ sont indépendants donc 
+$$\boxed{P(A\cap B) = P(A) \times P(B)}$$
+\item Montrer que 
+$$(A \cap B) \cup (\overline{A} \cap B) = ((A\cap B) \cup \overline{A}) \cap ((A\cap B) \cup B)$$
+$$(A \cap B) \cup (\overline{A} \cap B) = ((A\cup \overline{A}) \cap (B \cup \overline{A})) \cap ((A\cup B) \cap (B\cup B))$$
+$$(A \cap B) \cup (\overline{A} \cap B) = (\Omega \cap (B \cup \overline{A})) \cap ((A\cup B) \cap B)$$
+$$(A \cap B) \cup (\overline{A} \cap B) = (B \cup \overline{A}) \cap B$$
+$$(A \cap B) \cup (\overline{A} \cap B) = B$$
+\item On a $$\boxed{(A \cap B) \cap (\overline{A} \cap B) = A \cap B \cap \overline{A} \cap B = \varnothing \cap B = \varnothing}$$
+\item On a 
+$$(A \cap B) \cup (\overline{A} \cap B) = B$$
+et $(A \cap B)$ et $(\overline{A} \cap B)$ disjoints donc
+$$\boxed{P(B) = P(A \cap B) + P(\overline{A} \cap B)}$$
+\item On a
+$$P(B) = P(A \cap B) + P(\overline{A} \cap B)$$
+donc 
+$$P(B) = P(A) \times P(B) + P(\overline{A} \cap B)$$
+donc 
+$$P(B) - P(A)\times P(B) = P(\overline{A} \cap B)$$
+donc 
+$$P(B)(1-P(A)) = P(\overline{A} \cap B)$$
+or $1-P(A) = P(\overline{A})$ donc 
+$$\boxed{P(B)\times P(\overline{A}) = P(\overline{A} \cap B)}$$
+Ainsi $\overline{A}$ et $B$ sont indépendants
+\end{enumerate}
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}

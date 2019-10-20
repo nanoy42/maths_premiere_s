@@ -1,0 +1,103 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 7}
+
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\begin{document}
+\center
+\Large Contrôle de cours
+\flushleft
+\center
+Produit scalaire
+\flushleft \normalsize
+Durée du contrôle : 1h10\newline
+Ce sujet comporte 3 pages\newline
+La calculatrice est autorisée
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+
+\begin{tabularx}{\linewidth}{| X | X | X |}
+\hline
+Méthode & Conditions d'applications & Formules\\ \hline
+Analytiquement & Si l'on connait les coordonnées & $$\covec{x}{y} \cdot \covec{x'}{y'} = xx'+yy'$$\\ \hline
+Avec les normes & Si l'on connait $||\vv{u}||$, $||\vv{v}||$, $||\vv{u} - \vv{v}||$ & $$\vv{u}\cdot\vv{v} = \frac{1}{2}(||\vv{u}||^2 + ||\vv{v}||^2 - ||\vv{u} - \vv{v}||^2)$$ \\ \hline
+Projection orthogonale & Si l'on connait le projeté orthogonal & $$\vv{OA}\cdot\vv{OB} = ||\vv{OH}|| \times ||\vv{OA}||$$ où $H$ est le projeté de B sur $(OA)$\\ \hline 
+Normes et angle & Si on connait l'angle entre les vecteurs et la norme des vecteurs & $$\vv{u}\cdot\vv{v} = ||\vv{u}|| \times ||\vv{v}|| \times \cos(\alpha)$$ \\ \hline
+\end{tabularx}
+On a 
+$$ \frac{1}{2}(||\vv{u}||^2 + ||\vv{v}||^2 - ||\vv{u} - \vv{v}||^2) = \frac{1}{2}(||\vv{u}||^2 + ||\vv{v}||^2 - (||\vv{u}||^2 - 2\vv{u}\cdot\vv{v} + ||\vv{v}||^2) = \frac{1}{2} 2 \vv{u}\cdot\vv{v} = \vv{u}\cdot \vv{v}$$
+De plus 
+$$\covec{2}{3} \cdot \covec{4}{-5} = 2\times 4 - 3\times 5 = 8 - 15 = -7$$
+\subsection*{Exercice 2 (Etude de l'orthogonal, temps conseillé : 25 min) : }
+\begin{enumerate}
+\item 
+Si l'un des deux vecteurs est nul alors l'autre est nul et c'est ok. On les suppose alors non nuls.
+
+On suppose $\vv{u}$ et $\vv{v}$ colinéaires. L'angle $\alpha$ qui les sépare est alors de $0$ ou de $\pi$ (selon s'ils ont le même sens ou sens opposé) donc le cosinus vaut $1$ ou $-1$. Ainsi $$\vv{u}\cdot\vv{v} = ||\vv{u}|| \times ||\vv{v}|| \times \cos(\alpha) = \pm ||\vv{u}|| \times ||\vv{v}||$$
+
+Réciproquement si $$\vv{u}\cdot\vv{v} =\pm ||\vv{u}|| \times ||\vv{v}||$$ alors $$||\vv{u}|| \times ||\vv{v}|| \times \cos(\alpha) = \pm ||\vv{u}|| \times ||\vv{v}||$$ d'où $\cos(\alpha) = \pm 1$ et $\alpha = 0 + 2k\pi$ ou $\alpha = \pi + 2k\pi$ et les vecteurs sont colinéaires.
+\item On dit que $\vv{u}$ et $\vv{v}$ sont orthogonaux si $\vv{u}\cdot \vv{v} = 0$ 
+\item $\{\vv{0}\}^\perp$ est l'ensemble des vecteurs colinéaires à $\vv{0}$ soit l'ensemble des vecteurs du plan
+\item Si $u \in \{\vv{u}\}^\perp$ alors $\vv{u}\cdot \vv{u} = 0$ donc $||\vv{u}||^2 = 0$ d'où $\vv{u} = \vv{0}$. Donc $\boxed{u \notin \{\vv{u}\}^\perp}$
+\item $\vv{0}$ est colinéaire à tout vecteur donc en particulier à $\vv{u}$ donc $$\boxed{\vv{0} \in \{\vv{u}\}^\perp}$$
+\item Soit $\vv{v} \in \{\vv{u}\}^\perp$ Alors $$\vv{u} \cdot \vv{v} = 0$$ Ainsi $$\vv{u} \cdot (\lambda\vv{v}) = \lambda \vv{u} \cdot \vv{v} = \lambda \times 0 = 0$$ d'où $$\boxed{\lambda \vv{v} \in \{\vv{u}\}^\perp}$$
+\item  Si $\covec{a}{b} \in \{\vv{u}\}^\perp$ alors $$a\times x + b \times y = 0$$ $$a \times 0 + b \times y = 0$$ $$b\times y =0$$ $$b=0$$ Tout vecteur de $\{\vv{u}\}^\perp$ s'écrit $\covec{\lambda}{0}$. Ils sont bien tous colinéaires.
+\item On a $\vv{v_1} \in \{\vv{u}\}^\perp$ donc 
+$$x\times x_1 + y\times y_1 = 0$$
+$$y\times y_1 = -x\times x_1$$
+$$y_1 = -\frac{x}{y}x_1$$
+On a $\vv{v_2} \in \{\vv{u}\}^\perp$ donc 
+$$x\times x_2 + y\times y_2 = 0$$
+$$y\times y_2 = -x\times x_2$$
+$$y_2 = -\frac{x}{y}x_2$$
+d'où
+$$\boxed{y_1 = -\frac{x}{y}x_1} \quad (1)$$
+$$\boxed{y_2 = -\frac{x}{y}x_2} \quad (2)$$
+\item On a
+$$x_1^2y_2^2 + y_1^2x_2^2 = x_1^2 \left(-\frac{x}{y}x_2\right)^2 + \left(-\frac{x}{y}x_1\right)^2x_2^2 =2 \frac{x^2}{y^2}x_1^2x_2^2 = 2x_1 \frac{x}{y}y_1 x_2 \frac{x}{y}y_2 = 2x_1(-y_1)x_2(-y_2) =2x_1y_1x_2y_2$$
+
+\item On a $$\vv{v_1} \cdot \vv{v_2} = x_1x_2 + y_1y_2$$ et $$||\vv{v_1}|| \times ||\vv{v_2}|| = \sqrt{x_1^2 + y_1^2}\sqrt{x_2^2+y_2^2} =\sqrt{(x_1^2+y_1^2)(x_2^2+y_2^2)} = \sqrt{(x_1x_2)^2 + x_1^2y_2^2 + y_1^2x_2^2 + (y_1y_2)^2} = $$ $$\sqrt{(x_1x_2)^2 + 2x_1y_1x_2y_2 + (y_1y_2)^2} = \sqrt{(x_1y_1+x_2y_2)^2} = x_1y_1+x_2y_2$$
+On a donc 
+$$\boxed{\vv{v_1}\cdot \vv{v_2} = ||\vv{v_1}|| \times ||\vv{v_2}||}$$
+\item D'après la question 1 et la question précédente, $\vv{v_1}$ et $\vv{v_2}$ sont colinéaires
+\end{enumerate}
+\subsection*{Exercice 3 (Equation cartésienne de sphère, temps conseillé : 15 min) : }
+\begin{enumerate}
+\item On a $$||\vv{u}|| = \sqrt{\vv{u}\cdot\vv{u}}$$
+$$||\vv{u}|| = \sqrt{x\times x + y \times y + z\times z}$$
+$$\boxed{||\vv{u}|| = \sqrt{x^2+y^2+z^2}}$$
+\item Soit $M(x,y,z)$ sur la sphère. Alors $$||\vv{\Omega M}|| = r$$ donc $$||\vv{\Omega M}||^2 = r^2$$ Or $$\vv{\Omega M} = \begin{pmatrix} x - x_\Omega \\ y-y_\Omega \\ z - z_\Omega\end{pmatrix}$$ donc $$||\vv{\Omega M}|| = \sqrt{(x-x_\Omega)^2 + (y-y_\Omega)^2 + (z-z_\Omega)^2}$$ d'où finalement 
+$$\boxed{\mathscr{S}:(x-x_\Omega)^2 + (y-y_\Omega)^2 + (z-z_\Omega)^2 = r^2}$$
+\end{enumerate}
+\subsection*{Exercice 4 (Théorèmes de Pythagore et d'Al-Kachi, temps conseillé : 15 min) : }
+\begin{enumerate}
+\item L'angle est de $\alpha = \frac{\pi}{2}$ (ou $90^\circ$). Son cosinus est de 0.
+\item On a 
+$$\vv{AC}\cdot\vv{AC} = ||\vv{AC}|| \times ||\vv{AB}|| \times \cos(\alpha) = 0$$
+Or 
+$$\vv{AC}\cdot\vv{AC} = \frac{1}{2}(||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{AB}-\vv{AC}||^2)$$
+or $$\vv{AB} - \vv{AC} = \vv{CA} + \vv{AB} = \vv{CB}$$ donc
+$$\vv{AC}\cdot\vv{AC} = \frac{1}{2}(||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{CB}||^2)$$
+d'où finalement 
+$$\frac{1}{2}(||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{CB}||^2) =0$$
+puis
+$$||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{CB}||^2 = 0$$
+et 
+$$\boxed{BC^2 = AB^2 + AC^2}$$
+\item On a
+$$\vv{AC}\cdot\vv{AC} = ||\vv{AC}|| \times ||\vv{AB}|| \times \cos(\alpha)$$
+Or 
+$$\vv{AC}\cdot\vv{AC} = \frac{1}{2}(||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{AB}-\vv{AC}||^2)$$
+or $$\vv{AB} - \vv{AC} = \vv{CA} + \vv{AB} = \vv{CB}$$ donc
+$$\vv{AC}\cdot\vv{AC} = \frac{1}{2}(||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{CB}||^2)$$
+d'où finalement 
+$$\frac{1}{2}(||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{CB}||^2) = ||\vv{AC}|| \times ||\vv{AB}|| \times \cos(\alpha)$$
+puis
+$$||\vv{AC}||^2 + ||\vv{AB}||^2 - ||\vv{CB}||^2 = 2 ||\vv{AC}|| \times ||\vv{AB}|| \times \cos(\alpha)$$
+et 
+$$\boxed{BC^2 = AB^2 + AC^2 - 2 \times AB \times AC \times \cos(\alpha)}$$
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}

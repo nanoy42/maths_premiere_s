@@ -1,0 +1,203 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 10}
+
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\include{algtolatex}
+
+\begin{document}
+\center
+\Large Contrôle de cours (correction)
+\flushleft
+\center
+Variables aléatoires
+\flushleft \normalsize
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+Soit $X$ une variable aléatoire sur $(\Omega,P)$. On note $X(\Omega) = \{x_1,x_2,\ldots,x_p\}$. 
+On définit l'espérance par 
+$$E(X) = x_1P(X=x_1) + x_2P(X=x_2) + \ldots + x_pP(X=x_p) = \sum_{i=1}^p x_i P(X=x_i)$$
+La variance est définie par $$V(X) = E((X-E(X))^2)$$ c'est à dire, en note $\mu = E(X)$
+$$V(X) = (x_1-\mu)^2 P(X=x_1) + (x_2-\mu)^2 P(X=x_2) + \ldots + (x_p-\mu)^2 P(X=x_p)$$ 
+
+Finalement l'écart type de $X$ est donné par 
+$$\sigma(X) = \sqrt{V(X)}$$ (qui existe bien car $V(X)\geq0$). 
+On note $Y=aX+b$, alors 
+$$E(Y) =  \sum_{i=1}^p y_i P(Y=y_i)$$
+où pour tout $i$, $y_i =ax_i+b$
+$$E(Y) =  \sum_{i=1}^p (ax_i+b) P(aX+b=ax_i+b)$$
+$$E(Y) =  \sum_{i=1}^p (ax_i+b) P(X=x_i)$$
+$$E(Y) =  \sum_{i=1}^p ax_iP(X=x_i) + \sum_{i=1}^p bP(X=x_i)$$
+$$E(Y) =  a\sum_{i=1}^p x_iP(X=x_i) + b\sum_{i=1}^p P(X=x_i)$$
+or $\displaystyle \sum_{i=1}^p x_iP(X=x_i) = E(X)$ et $\displaystyle \sum_{i=1}^p P(X=x_i) = 1$ donc 
+$$\boxed{E(aX+b) = aE(X) +b}$$
+De plus on a 
+$$V(aX) = E((aX-E(aX))^2) = E(a^2(X-E(X))^2) = a^2E((X-E(X))^2) = a^2 V(X)$$
+\subsection*{Exercice 2 (Un jeu de casino, temps conseillé : 20 min) : }
+Gros attention : la mise de départ doit être comptabilisé dans les gains : quand "le joueur ne gagne rien", il perd en fait sa mise de départ soit 2 euros
+\begin{enumerate}
+\item L'idée la plus simple ici est de faire un diagramme de Venn et d'en déduire les probabilités\newline
+Il a une seule carte qui a la bonne couleur et la bonne valeur soit 
+$$\boxed{P(A) = \frac{1}{52}}$$
+Il a 13 cartes qui ont la couleur que le joueur a donné, et 12 qui ont la même couleur sans avoir la bonne valeur soit 
+$$\boxed{P(B) = \frac{12}{52}}$$
+Il y 4 cartes qui ont la même valeur que celle donnée par le joueur dont 3 qui n'ont pas la même couleur donc 
+$$\boxed{P(C) = \frac{3}{52}}$$
+Finalement, il a $52-1-12-3 = 36$ cartes qui n'ont rien en commun donc 
+$$\boxed{P(D) = \frac{36}{52}}$$
+\item $$\boxed{X(\Omega) =\{-2,0,20\}}$$
+\item La probabilité d'obtenir 20 euros est la même que celle d'obtenir la bonne carte soit $$\frac{1}{52}$$ La probabilité de ne rien gagner est celle d'avoir la bonne couleur uniquement additionnée à celle d'avoir la bonne valeur uniquement soit 
+$$\frac{12}{52} + \frac{3}{52} = \frac{15}{52}$$
+Finalement la probabilité de perdre 2 euros est $$\frac{36}{52}$$ Ainsi, on peut donner la loi de $X$ dans un tableau \newline
+\begin{tabularx}{\linewidth}{|X|X|X|X|}
+\hline
+$x$ & $-2$ & $0$ & $20$\\ \hline
+$P(X=x)$ & $ \frac{36}{52}$ & $ \frac{15}{52}$ & $ \frac{1}{52}$ \rule[-7pt]{0pt}{20pt} \\ \hline
+\end{tabularx}
+\item On a $$E(X) = -2 \times \frac{36}{52} + 0 \times \frac{15}{52} + 20 \times \frac{1}{52}$$ $$\boxed{E(X) = -1}$$ Sur un grand nombre de partie, on aura perdu, en moyenne, 1 euros par partie don non très peu pour moi.
+\item En moyenne il aura perdu 1 euro par partie soit une perte de 100 euros
+\item On a $$V(X) = (-2-(-1))^2\times \frac{36}{52} + (0 -(-1))^2 \times \frac{15}{52} + (20 -(-1))^2 \times \frac{1}{52} = \frac{36}{52} + \frac{15}{52} + 21^2 \times \frac{1}{52}$$
+$$\boxed{V(X) = \frac{123}{13} \simeq 9,46}$$
+
+Un grand écart-type qui se traduit pa run éloignement des gains extrêmes.
+\item En considérant "avoir la bonne combinaison" comme un succès, on trouve que $Y$ suit la loi binomiale de paramètre $n$ et $\displaystyle \frac{1}{52}$ : $$\boxed{Y \sim \mathscr{B}\left(n,\frac{1}{52}\right)}$$
+\item On a 
+$$P(Y \leq 2) = P(Y=0) + P(Y=1) + P(Y=2)$$
+On utilisant le fait que 
+$$P(X=k) = \binom{50}{k} \frac{1}{52}^k \frac{51}{52}^{50-k}$$
+(et en demandant gentiment à la calculatrice de fournir la réponse), 
+$$\boxed{P(Y \leq 2) = 0,928}$$
+Cela veut aussi dire que $P(Y> 2) =0,072$ ce qui veut dire que la probabilité d'obtenir 3 succès ou plus su 50 essais est extrêmement faible...
+\item La formule du cours donne 
+$$\boxed{E(Y) = \frac{n}{52}}$$ 
+On veut $$E(Y) \geq 2$$ ($E(Y) =2$ si on veut) 
+$$E(Y) \geq 2$$
+$$\frac{n}{52} \geq 2$$
+$$n \geq 104$$
+Pour $n = 104$, $E(Y) = 2$. Ainsi, à partir de $n=104$, le joueur peut espérer avoir 2 succès. En calculant la variance, on trouve une variance d'environ $1,96$ pour $n=104$ donc des valeurs pas très éloignés de $2$.
+\end{enumerate}
+\subsection*{Exercice 3 (Un peu de loi binomiale, temps conseillé : 15 min) : }
+\begin{enumerate}
+\item On dit que $X$ suit la loi binomiale de paramètre $n$ et $p$ si $$X(\Omega) = [\![0,n]\!]$$ et pour tout $k \in [\![0,n]\!]$, $$P(X = k) = \binom{n}{k} p^k(1-p)^{n-k}$$ Si $X \sim \mathscr{B}(n,p)$ alors $$E(X) = np$$ et $$V(X) = np(1-p)$$ 
+\item On a $$\boxed{X\sim \mathscr{B}(20,0.7)}$$
+\item On calcule $$P(X = 13) = \binom{20}{13}\times0.7^{13}\times0.3^7$$
+$$\boxed{P(X=13) = 0,164262}$$
+\item On calcule 
+$$\sum_{k=0}^7 P(X=k)$$ et en demandant gentiment à la calculatrice de nous fournir la réponse 
+$$\boxed{P(X=7) = 0,001279}$$
+\item On calcule l'espérance de $X$ : $$E(X) = 20 \times 0,7$$
+$$\boxed{E(X) = 14}$$
+En moyenne, il mettra 14 fléchettes par soir
+\item On a 
+$$V(X) = 20\times 0.7 \times 0.3$$
+$$\boxed{V(X) = 4.2}$$
+\item Algorithme de la factorielle
+\begin{algobox}
+\Variables
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne res EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne res PREND\_LA\_VALEUR 1
+\Pour{k}{2}{n}
+\DebutPour
+\Ligne res PREND\_LA\_VALEUR res * k
+\FinPour
+\Ligne AFFICHER res
+\FinAlgo
+
+\end{algobox}
+\item Algorithme des nombres binomiaux
+\begin{algobox}
+\Variables
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\Ligne res EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne SAISIR k
+\Ligne res PREND\_LA\_VALEUR factorielle(n)/(factorielle(k)*factorielle(n-k))
+\Ligne AFFICHER res
+\FinAlgo
+
+\end{algobox}
+\item Algorithme de $P(X=k)$
+\begin{algobox}
+\Variables
+\Ligne p EST\_DU\_TYPE NOMBRE
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\Ligne res EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne SAISIR p
+\Ligne SAISIR k
+\Ligne res PREND\_LA\_VALEUR binom(k,n)*pow(p,k)*pow(1-p,n-k)
+\Ligne AFFICHER res
+\FinAlgo
+\end{algobox}
+\end{enumerate}
+\subsection*{Exercice 4 (Loi géométrique, temps conseillé : 30-40 min) : }
+\begin{enumerate}
+\item La flemme de faire l'arbre, mais en gros pour que le premier succès arrive en $k$, il faut que les $(k-1)$ premières branches soient $E$ (échec) et la dernière $S$ (succès) soit une probabilité
+$$\underbrace{(1-p)\times (1-p) \times \ldots \times (1-p)}_{n-1 \text{ fois}} \times p = (1-p)^{n-1} p$$
+\item On a
+$$\boxed{\sum_{k=0}^n q^k = 1 + q + q^2 + \ldots + q^n = \frac{1-q^{n+1}}{1-q}}$$
+où $q$ est un réel différent de $1$
+\item Comparer, avec des petits points 
+$$\sum_{k=0}^{n-1} a_k = a_0 + a_1 + \ldots + a_{n-1}$$ et $$\sum_{k=1}^n a_{k-1} = a_{1-1} + a_{2-1} + \ldots + a_0 + a_1 + \ldots + a_{n-1}$$
+Ainsi 
+$$\boxed{\sum_{k=0}^{n-1} a_k = \sum_{k=1}^n a_{k-1}}$$
+Ainsi 
+$$\sum_{k=1}^n q^{k-1} = \sum_{k=0}^{n-1} q^k$$
+\item On a
+$$\sum_{k=1}^n P(X=k) = \sum_{k=1}^n (1-p)^{k-1} p = p\sum_{k=1}^n (1-p)^{k-1}$$ or d'après la question précédente et celle d'avant $$\sum_{k=1}^n (1-p)^{k-1}=\sum_{k=0}^{n-1} (1-p)^{k} = \frac{1-(1-p)^n}{1-(1-p)} = \frac{1-(1-p)^2}{p}$$
+
+Ainsi 
+$$\sum_{k=1}^n P(X=k) = p\sum_{k=1}^n (1-p)^{k-1} = p\frac{1-(1-p)^n}{p}$$
+Finalement 
+$$\boxed{\sum_{k=1}^n P(X=k) = 1 - (1-p)^n}$$
+\item On a $0 < 1-p < 1$ car $0<p<1$ donc $$(1-p)^n \underset{n\rightarrow \infty}{\longrightarrow} 0$$ donc $$\underset{n\rightarrow \infty}{\lim} \sum_{k=1}^n P(X=k) = 1 - \underset{n\rightarrow \infty}{\lim} (1-p)^n$$ d'où $$\boxed{\sum_{k=1}^\infty P(X=k)=1}$$ Oui c'est rassurant
+\item On veut ici établir le résultat suivant : 
+$$\boxed{\sum_{k=1}^\infty kx^{k-1} = \frac{1}{(1-x)^2}}$$ pour tout $x\in ]0,1[$
+\begin{enumerate}
+\item On note $$f_n(x) = \sum_{k=0}^n x^k$$ $f_n$ est dérivable comme somme de fonctions dérivables et pour tout $x\in ]0,1[$, $$\boxed{f'_n(x) = \sum_{k=0} kx^{k-1} = \sum_{k=1} kx^{k-1}}$$ 
+\item On a $$f_n(x) = \sum_{k=0}^n x^k = \frac{1-x^{n+1}}{1-x}$$ $f_n$ est dérivable comme quotient d'une fonction dérivable et d'une fonction dérivable qui ne s'annule pas. On a de plus 
+$$\boxed{f'_n(x) = \frac{-(n+1)x^n(1-x) +(1-x^{n+1})}{(1-x)^2}}$$
+\item On déduit des deux questions précédentes
+$$\boxed{\sum_{k=1}^n kx^{k-1} = \frac{-(n+1)x^n(1-x) +(1-x^{n+1})}{(1-x)^2}}$$
+\item On a $$x^n \underset{n\rightarrow \infty}{\longrightarrow} 0$$ et $$x^{n+1} \underset{n\rightarrow \infty}{\longrightarrow} 0$$ donc $$-(n+1)x^n(1-x) +(1-x^{n+1}) \underset{n\rightarrow \infty}{\longrightarrow} 1$$
+Finalement
+$$\boxed{\sum_{k=1}^\infty kx^{k-1} = \frac{1}{(1-x)^2}}$$
+\end{enumerate}
+\item On suppose $X\sim \mathcal{G}(p)$, alors 
+$$E(X) = \sum_{k=1}^\infty kP(X=k)$$
+$$E(X) = \sum_{k=1}^\infty k(1-p)^{k-1}p$$
+$$E(X) = p\sum_{k=1}^\infty k(1-p)^{k-1}$$
+$$E(X) = p\frac{1}{(1-(1-p))^2}$$
+$$E(X) = p\frac{1}{p^2}$$
+$$\boxed{E(X) = \frac{1}{p}}$$
+\item On suppose $X\sim \mathcal{G}(p)$
+$$V(X) = E(X^2)-E(X)^2$$
+$$V(X) = \sum_{k=1}^\infty k^2 (1-p)^{k-1}p - \frac{1}{p^2}$$
+$$V(X) = p\sum_{k=1}^\infty k^2 (1-p)^{k-1} - \frac{1}{p^2}$$
+$$V(X) = p\left( \frac{2}{(1-(1-p))^3}-\frac{1}{(1-(1-p))^2}\right) - \frac{1}{p^2}$$
+$$V(X) = p\left( \frac{2}{p^3}-\frac{1}{p^2}\right) - \frac{1}{p^2}$$
+$$V(X) = \frac{2}{p^2}-\frac{1}{p} - \frac{1}{p^2}$$
+$$V(X) = \frac{1}{p^2}-\frac{1}{p}$$
+$$V(X) = \frac{1}{p^2}-\frac{p}{p^2}$$
+$$\boxed{V(X) = \frac{1-p}{p^2}}$$
+\item 
+\begin{enumerate} 
+\item La probabilité de tirer l'as de coeur $\frac{1}{4}$ donc la loi qui donne le nombre de tirage est celle du premier succès sur une expérience où le succès est à $\frac{1}{4}$.
+\item On a $$\boxed{P(X = 3) = \left(\frac{3}{4}\right)^2\times \frac{1}{4} = \frac{9}{64}}$$ 
+\item On a $$P(X\geq7) = \sum_{k=1}^7 P(X=k)$$ puis en demandant gentiment à la calculatrice fournir la réponse 
+$$\boxed{P(X\geq 7) = 0,866516}$$
+\item On $$E(X) = \frac{1}{\frac{1}{4}} = 4$$ et $$V(X) = \frac{\frac{3}{4}}{\frac{1}{16}} = 12$$ En moyenne, il faut tirer 4 fois avant d'obtenir l'as de coeur 
+\item Un peu mais ça va\end{enumerate}
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}

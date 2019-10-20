@@ -1,0 +1,66 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 9}
+
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\begin{document}
+\center
+\Large Contrôle de cours
+\flushleft
+\center
+Probabilités
+\flushleft \normalsize
+Durée du contrôle : 1h\newline
+Ce sujet comporte 2 pages\newline
+La calculatrice est autorisée
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+Prouver la formule donnant $P(A\cup B)$. Que devient la formule si $A$ et $B$ sont disjoints ? Déduire de ce qui précède la formule donnant $P(\overline{A})$
+\subsection*{Exercice 2 (Petits exos OKLM, temps conseillé : 15 min) : }
+\begin{enumerate}
+\item On lance 3 fois une pièce de monnaie 3 fois (on notera par exemple $FPP$ si on a obtenu Face Pile Pile). La pièce est truquée : elle a une probabilité $\displaystyle \frac{1}{3}$ de tomber sur pile
+\begin{enumerate}
+\item Représenter la situation par un arbre pondéré
+\item Calculer la probabilité qu'il y ait exactement 1 face dans l'expérience
+\end{enumerate}
+\item On considère une urne contenant 9 boules rouges et 7 boules noires. On tire une boule. Si la boule est noire, on rajoute une boule rouge (et on ne remet pas la boule noire dans l'urne). Si la boule est rouge on ajoute deux boules noires (et on ne remet pas la boule rouge). On retire alors une boule et on refait les même opérations que précédemment. On tire enfin une dernière boule. Après avoir représenté la situation par un arbre pondéré, calculer la probabilité qu'il y ait exactement une boule noire tirée. Calculer ensuite la probabilité qu'il y ait au moins 2 boules rouges tirées.
+\end{enumerate}
+\subsection*{Exercice 3 (Probabilité conditionnelle et indépendance, temps conseillé : 35 min) : }
+Soit $\Omega$ un univers et $P$ une probabilité. Soient $A$ et $B$ deux évènements tels que $P(B) \neq 0$. On définit la \textbf{probabilité de $A$ sachant $B$} et on note $P_B(A)$ 
+$$P_B(A) = \frac{P(A\cap B)}{P(B)}$$
+\begin{enumerate}
+\item Etablir que dans le cas d'une probabilité uniforme, 
+$$P_B(A) = \frac{\text{Card}(A\cap B)}{\text{Card}(B)}$$
+\textbf{A partir de maintenant, sauf contre indication, on ne fait plus l'hypothèse d'une probabilité uniforme}
+\item Montrer que 
+$$0 \leq P_B(A) \leq 1$$
+\emph{(Indication : on utilisera le fait que si $C \subset D$ alors $P(C) \leq P(D)$)}
+\item Montrer que $$P_B(\Omega) = 1$$
+\item Montrer que si $A_1$ et $A_2$ sont incompatibles, alors $$P_B(A_1 \cup A_2) = P_B(A_1) + P_B(A_2)$$
+\item Montrer que $$P_B(\varnothing) = 0$$
+\item Montrer que $$P_B(\overline{A}) = 1 - P_B(A)$$
+\item Montrer que si $A$ et $B$ sont de probabilités non nulle, alors 
+$$P_B(A) = \frac{P_A(B)P(A)}{P(B)}$$
+(formule de BAYES)\newline
+
+
+\textbf{On dit que deux évènements $A$ et $B$ sont indépendants si $P(A\cap B) = P(A) \times P(B)$}
+\item Soit $A$ tel que $0 < P(A) < 1$. Montrer alors que $A$ et $\overline{A}$ ne sont pas indépendants
+\item Montrer que si $A$ et $B$ sont des évènements de probabilités non nulles incompatibles, alors ils ne sont pas indépendants
+\item Soit $A$ et $B$ deux évènements avec $P(B) > 0$. Montrer que 
+$$A \text{ et } B \text{ indépendants} \Leftrightarrow P_B(A) = P(A)$$
+Interpréter le terme indépendant
+\item On veut montrer le résultat suivant : si $A$ et $B$ sont indépendants alors $\overline{A}$ et $B$ le sont aussi
+\begin{enumerate}
+\item Traduire l'hypothèse $A$ et $B$ indépendants (on n'utilisera pas la probabilité $P_B$ mais plutôt la définition)
+\item Montrer que 
+$$B = (A \cap B) \cup (\overline{A} \cap B)$$
+\item Les évènements $(A \cap B)$ et $(\overline{A} \cap B)$ sont incompatibles. Pourquoi ?
+\item En déduire que $$P(B) = P(A \cap B) + P(\overline{A} \cap B)$$
+\item Montrer alors que $\overline{A}$ et $B$ sont indépendants (utiliser la définition)
+\end{enumerate}
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}

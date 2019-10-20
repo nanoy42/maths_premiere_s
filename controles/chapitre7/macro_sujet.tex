@@ -1,0 +1,46 @@
+\documentclass{article}[11pt]
+\usepackage[frenchb,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{times}
+\usepackage{float}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\frenchbsetup{StandardLists=true} % � inclure si on utilise \usepackage[french]{babel}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+%\usepackage[Algorithme]{algorithm}
+%\usepackage{algorithmic}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usetikzlibrary{shapes}
+\pagestyle{fancy}
+\newcommand{\tr}[1]{{\vphantom{#1}}^{\mathit t}{#1}} 
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{Cours 1�re S}
+\fancyhead[R]{Yoann Pietri}
+\newcounter{theoremecounter}[subsection]
+\usepackage{titlesec}
+\setcounter{secnumdepth}{3}% enl�ve la num�rotation apr�s les sections
+%\renewcommand\thechapter {\Roman{chapter}}
+
+ \setlength{\parindent}{0pt}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\eqi}{\Leftrightarrow}
+\titleformat{\subsubsection}
+   {\normalfont\fontsize{11pt}{13pt}\selectfont\bfseries}% apparence commune au titre et au num�ro
+   {\thesubsubsection}% apparence du num�ro
+   {1em}% espacement num�ro/texte
+   {}% apparence du titre
+
+\tikzstyle{theobox} = [draw=black, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{theotitle} =[fill=white, text=black,rounded corners,draw=black,very thick]

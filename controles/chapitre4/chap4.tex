@@ -1,0 +1,63 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 4}
+
+\usepackage{tcolorbox}
+
+
+\begin{document}
+\center
+\Large Contrôle de cours
+\flushleft
+\center
+Suites
+\flushleft \normalsize
+Durée du contrôle : 1h (il faudra compter un peu plus...)\newline
+Ce sujet comporte 2 pages\newline
+La calculatrice est autorisée
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+Rappeler les 3 modes de génération d'une suite et donner des exemples pour deux d'entre eux\newline
+
+Rappeler la définition d'une suite arithmétique, redémontrer la formule donnant le terme général d'une suite arithmétique et redémontrer le résultat sur les variations d'une suite arithmétique.
+\subsection*{Exercice 2 (Etude d'une suite, temps conseillé : 20 min) : }
+Max met de l'eau, initialement à 20 degrés Celsius, à chauffer pour se faire des pâtes. On suppose que l'eau chauffe de 2 degrés Celsius toute les minutes après la mise en chauffe. On note $u_n$ la température de l'eau, en degré Celsius, après $n$ minutes de chauffe
+\begin{enumerate}
+\item Montrer que $(u_n)$ est une suite arithmétique dont on précisera la raison et le premier terme
+\item En déduire le terme général de la suite $(u_n)$
+\item Montrer que $(u_n)$ est croissante
+\item Calculer les 10 premiers termes de $(u_n)$ et les placer sur un graphe
+\item Ecrire un algorithme qui renvoie le premier $N$ tel que pour tout $n\geq N$, $u_n \geq A$ ($A$ saisi par l'utilisateur)
+\item Résoudre l'inéquation 
+$$u_n \geq 100$$
+\item Au bout de combien de temps, Max peut-il mettre ses pâtes ?
+\item Que pensez vous de cette modélisation ? \emph{On pourra faire intervenir la notion de limite}
+\end{enumerate}
+\subsection*{Exercice 3 (Limite d'une suite géométrique, temps conseillé : 20 min) : }
+On considère $(v_n)$ une suite géométrique de raison $q > 0$ et de premier terme $v_0 > 0$
+\begin{enumerate}
+\item Rappeler la définition d'une suite géométrique. Donner aussi le terme général de $(v_n)$
+\item Montrer que si $q=1$, alors la suite $(v_n)$ est constante égale à $v_0$\newline
+\textbf{Deux questions difficiles arrivent ... Si le candidat a des difficultés à réussir les questions, il est invité à admettre le résultat encadré pour l'exercice 4}\newline
+
+\textbf{On admet l'existence d'une fonction définie sur $\bf{]0,+\infty[}$ appelée logarithme népérien, notée $\bf{\ln}$ qui vérifie : \begin{itemize} \item $\bf{\ln}$ est croissante \item $\bf{\ln(1)=0}$ \item Pour tout $\bf{a\in ]0,+\infty[}$ et $\bf{n \in \N}$, $\bf{\ln(a^n) = n\ln(a)}$ \item $\bf{a > 1 \Leftrightarrow \ln(a) > 0}$ \item $\bf{0 <a < 1 \Leftrightarrow \ln(a) < 0}$ \end{itemize}}
+\item On suppose $q > 1$. Soit $A > 0$. Résoudre l'inéquation $$v_n \geq A$$ \emph{(Indication : On pourra (devra...) utiliser le logarithme népérien et donner la solution sous la forme $n \geq \frac{\ln(B)}{\ln(C)}$ où $B$ et $C$ sont à exprimer en fonction de $A$, $v_0$ et $q$)} \newline Que dire de la limite de $(v_n)$ dans ce cas ?
+\item On suppose maintenant $q < 1$. Soit $\varepsilon > 0$. On veut savoir à partir de quel rang $[-\varepsilon,\varepsilon]$ contient toutes les valeurs de la suite. Résoudre l'inéquation $$v_n \leq \varepsilon$$  \emph{(Indication : On pourra (devra...) utiliser le logarithme népérien et donner la solution sous la forme $n \geq \frac{\ln(B)}{\ln(C)}$ où $B$ et $C$ sont à exprimer en fonction de $A$, $v_0$ et $q$)}
+\end{enumerate}
+Quelque soient les réponses apportées aux questions précédentes, on admettra la résultat suivant 
+\begin{tcolorbox}Si $(v_n)$ est une suite géométrique de raison $0 < q < 1$ avec $u_0 > 0$ alors $$v_n \underset{n\rightarrow \infty}{\longrightarrow} 0$$\end{tcolorbox}
+\subsection*{Exercice 4 (Exercices classiques du bac (abordable en première), temps conseillé : 20 min) : }
+On considère la suite définie par 
+$$\left\{\begin{array}{l}u_0 = 100 \\\forall n \in \N, \quad u_{n+1} = \frac{3}{4}u_n + 6\end{array}\right.$$
+\begin{enumerate}
+\item Calculer $u_0$, $u_1$, $u_2$ et $u_3$
+\item On considère la suite définie pour tout $n\in \N$ par $$v_n = u_n - 24$$ Montrer que $(v_n)$ est une suite géométrique de raison $\frac{3}{4}$ de d'un premier terme que l'on précisera 
+\item Etablir, que pour tout $n \in \N$, 
+$$u_n = 24 + 76 \times \left(\frac{3}{4}\right)^n$$
+\item Montrer que $(v_n)$ et $(u_n)$ sont décroissantes
+\item Montrer que $v_n \underset{n\rightarrow \infty}{\longrightarrow} 0$ \emph{(Indication : utiliser l'exercice 3)}. En déduire la limite de $(u_n)$ lorsque $n$ tend vers l'infini.
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\flushleft
+\emph{Ce genre de suite est très fréquent au bac : l'utilisation de suite intermédiaire et les $u_n = a + b\times q^n$ tombent (au moins) une fois sur deux}
+\end{document}

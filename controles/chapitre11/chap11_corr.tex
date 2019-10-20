@@ -1,0 +1,128 @@
+\include{macro_sujet}
+\fancyhead[L]{Contrôle chapitre 11}
+
+\usepackage[c]{esvect}
+\newcommand{\covec}[2]{\begin{pmatrix}#1 \\#2 \end{pmatrix}}
+
+\include{algtolatex}
+
+\begin{document}
+\center
+\Large Contrôle de cours (correction)
+\flushleft
+\center
+Echantillonage
+\flushleft \normalsize
+\subsection*{Exercice 1 (R.O.C., temps conseillé : 10 min) : }
+Voir le cours pour le principe et les objectifs. L'intervalle est alors $$\left[p-\frac{1}{\sqrt{n}},p+\frac{1}{\sqrt{n}}\right]$$
+\subsection*{Exercice 2 (temps conseillé : 10 min) : }
+On recherche l'intervalle de fluctuation au seuil de 95\% : 
+$$\left[0,71-\frac{1}{\sqrt{98765}},0,71+\frac{1}{\sqrt{98765}}\right]$$
+$$=[0,706818;0,713182]$$
+De plus
+$$f=\frac{69234}{98765} = 0,700997$$
+$$f\notin[0,706818;0,713182]$$
+donc l'échantillon n'est pas représentatif de la population.
+\subsection*{Exercice 3 (Algorithmique, temps conseillé : 20 min) : }
+\begin{enumerate}
+\item Algorithme de la factorielle
+\begin{algobox}
+\Variables
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne res EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne res PREND\_LA\_VALEUR 1
+\Pour{k}{2}{n}
+\DebutPour
+\Ligne res PREND\_LA\_VALEUR res * k
+\FinPour
+\Ligne AFFICHER res
+\FinAlgo
+
+\end{algobox}
+\item Algorithme des nombres binomiaux
+\begin{algobox}
+\Variables
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\Ligne res EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne SAISIR k
+\Ligne res PREND\_LA\_VALEUR factorielle(n)/(factorielle(k)*factorielle(n-k))
+\Ligne AFFICHER res
+\FinAlgo
+
+\end{algobox}
+\item Algorithme de $P(X=k)$
+\begin{algobox}
+\Variables
+\Ligne p EST\_DU\_TYPE NOMBRE
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\Ligne res EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne SAISIR p
+\Ligne SAISIR k
+\Ligne res PREND\_LA\_VALEUR binom(k,n)*pow(p,k)*pow(1-p,n-k)
+\Ligne AFFICHER res
+\FinAlgo
+\end{algobox}
+\item Algorithme de $P(X\leq k)$
+\begin{algobox}
+\Variables
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne p EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\Ligne i EST\_DU\_TYPE NOMBRE
+\Ligne res EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne SAISIR p
+\Ligne SAISIR k
+\Ligne res PREND\_LA\_VALEUR 0
+\Pour{i}{0}{k}
+\DebutPour
+\Ligne res PREND\_LA\_VALEUR res + PBinom(n,p,k)
+\FinPour
+\Ligne AFFICHER res
+\FinAlgo
+
+\end{algobox}
+\item Algorithme borne sup
+\begin{algobox}
+\Variables
+\Ligne n EST\_DU\_TYPE NOMBRE
+\Ligne p EST\_DU\_TYPE NOMBRE
+\Ligne p0 EST\_DU\_TYPE NOMBRE
+\Ligne k EST\_DU\_TYPE NOMBRE
+\DebutAlgo
+\Ligne SAISIR n
+\Ligne SAISIR p
+\Ligne k PREND\_LA\_VALEUR 0
+\Tantque{(PInfBinom(n,p,k) < p0)}
+\DebutTantQue
+\Ligne k PREND\_LA\_VALEUR k+1
+\FinTantQue
+\Ligne AFFICHER k
+\FinAlgo
+
+\end{algobox}
+\item \begin{verbatim} LimSupBinom(n,p,0.975) \end{verbatim} représente la borne supérieur de l'intervalle de fluctuation
+\end{enumerate}
+\subsection*{Exercice 4 (temps conseillé : 20 min) : }
+\begin{enumerate}
+\item $X$ suit la loi binomiale de paramètre 100 et $\frac{3}{10}$ $$\boxed{X \sim \mathscr{B}(100,0.3)}$$
+\item On cherche $a$ le plus grand entier tel que $P(X \leq a) < 2.5$\% : c'est $a=20$. On cherche $b$ le plus petit entier tel que $P(X \leq b) \geq 97.5$\% C'est $b=39$. Ainsi l'intervalle de fluctuation au seuil de 95\% est $$\left[\frac{21}{100},\frac{39}{100}\right]$$
+\item
+\begin{verbatim} LimSupBinom(100,0.3,0.975) \end{verbatim} aurait renvoyé $39$
+\item Non. C'est dû à des erreurs de calcul de la machine
+\item $41 \notin [21,39]$. Il y avait en fait 5\% de chance que Max tire un nombre de cartes qui n'était pas dans $[21,39]$
+\end{enumerate}
+$$\star \star \star$$
+\center
+FIN DU SUJET
+\end{document}
